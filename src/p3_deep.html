@@ -1,0 +1,312 @@
+
+<section class="block wrap" id="deepdive">
+  <div class="section-title">
+    <h2>Week 40 architecture deep dive</h2>
+    <p>Sep 28 - Oct 4, 2026 · 14 launches</p>
+  </div>
+  <div class="dd-layout">
+    <nav class="sidenav" aria-label="Week 40 launches">
+      <div class="cat">Threat detection</div>
+      <a href="#dd-gd-policies"><span class="d" style="background:var(--threat)"></span>GuardDuty org policies</a>
+      <a href="#dd-gd-runtime"><span class="d" style="background:var(--threat)"></span>GuardDuty Runtime + Security Hub</a>
+      <div class="cat">Identity</div>
+      <a href="#dd-idc-arn"><span class="d" style="background:var(--identity)"></span>Identity Store ARNs</a>
+      <a href="#dd-phone"><span class="d" style="background:var(--identity)"></span>Phone verification</a>
+      <a href="#dd-idc-mr"><span class="d" style="background:var(--identity)"></span>Identity Center multi-Region</a>
+      <div class="cat">Posture</div>
+      <a href="#dd-ct"><span class="d" style="background:var(--posture)"></span>CloudTrail Event Coverage</a>
+      <a href="#dd-sh-rp"><span class="d" style="background:var(--posture)"></span>Security Hub remediation plans</a>
+      <a href="#dd-pentest"><span class="d" style="background:var(--posture)"></span>Continuum pentest Regions</a>
+      <div class="cat">Network</div>
+      <a href="#dd-panw"><span class="d" style="background:var(--network)"></span>DNS Firewall + PANW GA</a>
+      <a href="#dd-dns-an"><span class="d" style="background:var(--network)"></span>DNS analytics</a>
+      <a href="#dd-kvs"><span class="d" style="background:var(--network)"></span>Kinesis Video PrivateLink</a>
+      <div class="cat">Data</div>
+      <a href="#dd-sm"><span class="d" style="background:var(--data)"></span>Secrets Manager posture</a>
+      <a href="#dd-ol"><span class="d" style="background:var(--data)"></span>Object Lock event holds</a>
+      <div class="cat">AI security</div>
+      <a href="#dd-agc"><span class="d" style="background:var(--ai)"></span>AgentCore private TLS</a>
+    </nav>
+
+    <div class="dd-main">
+
+      <!-- THREAT -->
+      <article class="card" id="dd-gd-policies" data-p="threat" data-s="GuardDuty">
+        <div class="tags"><span class="tag threat">Threat detection</span><span class="tag svc">GuardDuty</span><span class="when">Oct 1</span></div>
+        <h3><a href="https://aws.amazon.com/about-aws/whats-new/2026/10/guardduty-org-enablement-policies/" target="_blank" rel="noopener">Amazon GuardDuty: centralized enablement with AWS Organizations declarative policies</a></h3>
+        <p>An organization policy now enables GuardDuty across every account and Region. The configuration applies to existing accounts and is maintained automatically as new accounts join.</p>
+        <div class="sub">Architecture</div>
+        <div class="flow">
+          <div class="node new"><b>GuardDuty policy</b><span>Defined from the delegated administrator account</span></div><span class="arrow">→</span>
+          <div class="node"><b>Attach point</b><span>Organization root, OUs or individual accounts</span></div><span class="arrow">→</span>
+          <div class="node"><b>Default config</b><span>Applies in every Region where GuardDuty is available</span></div><span class="arrow">→</span>
+          <div class="node"><b>Per-Region overrides</b><span>For Regions that need different enablement</span></div>
+        </div>
+        <div class="sub">Key facts</div>
+        <div class="facts">
+          <div class="fact"><small>Override</small><div>Policy-set enablement cannot be changed from the GuardDuty console or API</div></div>
+          <div class="fact"><small>New accounts</small><div>Covered automatically when they join the organization</div></div>
+          <div class="fact"><small>Availability</small><div>All commercial Regions and AWS GovCloud (US)</div></div>
+          <div class="fact"><small>Setup</small><div>GuardDuty console → Organization policies, or the AWS Organizations APIs</div></div>
+        </div>
+        <div class="latam"><strong>LATAM context</strong>Financial groups in Brazil and Mexico often run hundreds of accounts across several Regions. A single policy replaces per-Region enablement scripts and closes the drift that auditors find when a new account goes live without threat detection.</div>
+      </article>
+
+      <article class="card" id="dd-gd-runtime" data-p="threat" data-s="GuardDuty">
+        <div class="tags"><span class="tag threat">Threat detection</span><span class="tag svc">GuardDuty</span><span class="when">Oct 2</span></div>
+        <h3><a href="https://aws.amazon.com/about-aws/whats-new/2026/10/aws-security-hub-runtime-monitoring/" target="_blank" rel="noopener">GuardDuty Runtime Monitoring is now included in the Security Hub Threat Analytics plan</a></h3>
+        <p>Runtime Monitoring inspects operating system, network and file activity to surface container escapes, privilege escalation and cryptomining. Where Security Hub is enabled, this usage now bills under Security Hub instead of GuardDuty.</p>
+        <div class="sub">What changes and what stays</div>
+        <div class="ba">
+          <div class="before"><h4>Changes</h4><ol class="steps"><li>No separate GuardDuty charge for Runtime Monitoring in accounts and Regions with Security Hub enabled</li><li>One Security Hub usage type spanning EC2, EKS and ECS on Fargate</li></ol></div>
+          <div class="after"><h4>Stays the same</h4><ol class="steps"><li>Detection coverage and finding types</li><li>GuardDuty security agents, with no reconfiguration</li><li>Free trials: Threat Analytics and Essentials stay separate, no new trial</li></ol></div>
+        </div>
+        <div class="latam"><strong>LATAM context</strong>Teams that budget security tooling per service should check Cost Explorer or the Security Hub usage page this month: the line item moves from GuardDuty to Security Hub.</div>
+      </article>
+
+      <!-- IDENTITY -->
+      <article class="card" id="dd-idc-arn" data-p="identity" data-s="IAM Identity Center">
+        <div class="tags"><span class="tag identity">Identity</span><span class="tag svc">IAM Identity Center</span><span class="when">Sep 30</span></div>
+        <h3><a href="https://aws.amazon.com/about-aws/whats-new/2026/09/iam-identity-center-apis-arns/" target="_blank" rel="noopener">Identity Store APIs now accept resource ARNs in addition to resource IDs</a></h3>
+        <p>Anywhere the Identity Store APIs took the ID of a user, group, group membership or identity store, they now also accept its ARN. The change is additive: existing integrations keep working.</p>
+        <div class="sub">Before vs. after</div>
+        <div class="ba">
+          <div class="before"><h4>Before: parse the ID out of the ARN</h4>
+<pre>USER_ARN=<span class="s">"arn:aws:identitystore::123456789012:user/user-abc123"</span>
+USER_ID=$(echo $USER_ARN | awk -F<span class="s">'/'</span> <span class="s">'{print $NF}'</span>)
+aws identitystore describe-user \
+  --identity-store-id d-9067f23abc \
+  --user-id $USER_ID</pre></div>
+          <div class="after"><h4>After: pass the ARN</h4>
+<pre>USER_ARN=<span class="s">"arn:aws:identitystore::123456789012:user/user-abc123"</span>
+aws identitystore describe-user \
+  --identity-store-id d-9067f23abc \
+  --user-id $USER_ARN</pre></div>
+        </div>
+        <div class="latam"><strong>LATAM context</strong>Provisioning pipelines that pass ARNs between CloudFormation, CDK and access-review tooling can drop their parsing step, which removes one more place for a joiner-mover-leaver flow to break.</div>
+      </article>
+
+      <article class="card" id="dd-phone" data-p="identity" data-s="AWS Account Management">
+        <div class="tags"><span class="tag identity">Identity</span><span class="tag svc">AWS Account Management</span><span class="when">Sep 30</span></div>
+        <h3><a href="https://aws.amazon.com/about-aws/whats-new/2026/09/aws-accounts-phone-number-verification/" target="_blank" rel="noopener">AWS accounts now support phone number verification</a></h3>
+        <p>Primary contact phone numbers were only checked for format. They can now be verified out of band with an SMS one-time passcode, in the console or through the API.</p>
+        <div class="sub">Verification flow</div>
+        <ol class="steps">
+          <li>Call SendPhoneNumberVerification (or start from the console) to send a 6-digit OTP by SMS.</li>
+          <li>Submit the code with VerifyPhoneNumber.</li>
+          <li>Read the status with GetContactInformation.</li>
+          <li>Changing the number with PutContactInformation asks for verification again.</li>
+        </ol>
+        <div class="sub">Key facts</div>
+        <div class="facts">
+          <div class="fact"><small>Organizations</small><div>Member accounts inherit verified status when they use the management account's number</div></div>
+          <div class="fact"><small>Availability</small><div>All AWS commercial Regions</div></div>
+        </div>
+        <div class="latam"><strong>LATAM context</strong>Incident response plans depend on AWS reaching the right person. A verified primary contact is a quick hygiene item to add to account baselines across the organization.</div>
+      </article>
+
+      <article class="card" id="dd-idc-mr" data-p="identity" data-s="IAM Identity Center">
+        <div class="tags"><span class="tag identity">Identity</span><span class="tag svc">IAM Identity Center</span><span class="when">Oct 1</span></div>
+        <h3><a href="https://aws.amazon.com/about-aws/whats-new/2026/10/aws-iam-identity-center-extends-multi-region-support-to-more-aws-regions" target="_blank" rel="noopener">IAM Identity Center extends multi-Region support to more AWS Regions</a></h3>
+        <p>Identity Center can now be replicated to opt-in Regions, and between Regions inside AWS GovCloud (US) and the AWS China Regions. Before, replication covered only the enabled-by-default commercial Regions.</p>
+        <div class="sub">Architecture</div>
+        <div class="flow">
+          <div class="node"><b>Primary Region</b><span>Where you administer Identity Center</span></div><span class="arrow">→</span>
+          <div class="node new"><b>Replication</b><span>Identities, entitlements and settings copied automatically</span></div><span class="arrow">→</span>
+          <div class="node"><b>Additional Regions</b><span>Users keep account access with provisioned entitlements if the primary Region is disrupted</span></div>
+        </div>
+        <div class="sub">Key facts</div>
+        <div class="facts">
+          <div class="fact"><small>Requirement</small><div>Multi-Region customer managed KMS key</div></div>
+          <div class="fact"><small>Identity sources</small><div>External IdP or Identity Center directory, organization instances</div></div>
+          <div class="fact"><small>Cost</small><div>Identity Center is free; standard KMS charges apply</div></div>
+        </div>
+        <div class="latam"><strong>LATAM context</strong>Mexico (Central) is an opt-in Region, so this launch is the one to watch for teams that want a replica close to Mexican users. Confirm it in the AWS Capabilities by Region list before planning.</div>
+      </article>
+
+      <!-- POSTURE -->
+      <article class="card" id="dd-ct" data-p="posture" data-s="CloudTrail">
+        <div class="tags"><span class="tag posture">Posture</span><span class="tag svc">CloudTrail</span><span class="when">Sep 30</span></div>
+        <h3><a href="https://aws.amazon.com/about-aws/whats-new/2026/09/aws-cloudtrail-event-coverage/" target="_blank" rel="noopener">CloudTrail Event Coverage uncovers blind spots in data plane logging</a></h3>
+        <p>A new console experience shows, at account and organization level, which services and resource types have data event logging enabled and which do not, and lets you subscribe to the missing coverage from the same view.</p>
+        <div class="sub">Closing a gap from the CLI</div>
+<pre><span class="c"># Example: add S3 object-level data events to an existing trail</span>
+aws cloudtrail put-event-selectors \
+  --trail-name org-trail \
+  --advanced-event-selectors <span class="s">'[{"Name":"S3 data events","FieldSelectors":[
+    {"Field":"eventCategory","Equals":["Data"]},
+    {"Field":"resources.type","Equals":["AWS::S3::Object"]}]}]'</span></pre>
+        <div class="latam"><strong>LATAM context</strong>When a regulator or auditor asks whether access to personal data is logged, the coverage view turns the answer into a checklist per service and resource type instead of a manual inventory.</div>
+      </article>
+
+      <article class="card" id="dd-sh-rp" data-p="posture" data-s="Security Hub">
+        <div class="tags"><span class="tag posture">Posture</span><span class="tag svc">Security Hub</span><span class="when">Oct 1</span></div>
+        <h3><a href="https://aws.amazon.com/about-aws/whats-new/2026/10/aws-security-hub-remediation-plans/" target="_blank" rel="noopener">Security Hub remediation plans prioritize and fix exposures by root cause</a></h3>
+        <p>Remediation plans group exposure findings that share a root cause. Fixing the one underlying resource, such as a misconfigured setting or an overly permissive policy, resolves or lowers the severity of several exposures at once.</p>
+        <div class="sub">Architecture</div>
+        <div class="flow">
+          <div class="node"><b>Exposure findings</b><span>Many findings on related resources</span></div><span class="arrow">→</span>
+          <div class="node new"><b>Root-cause grouping</b><span>One plan per underlying issue</span></div><span class="arrow">→</span>
+          <div class="node"><b>Remediation steps</b><span>CLI, Terraform and CDK guidance</span></div><span class="arrow">→</span>
+          <div class="node"><b>API access</b><span>Plans can be consumed by AI agents and automation</span></div>
+        </div>
+        <div class="sub">Key facts</div>
+        <div class="facts">
+          <div class="fact"><small>Unit of work</small><div>The root cause, not the individual finding</div></div>
+          <div class="fact"><small>Pricing</small><div>No additional cost in Security Hub Essentials</div></div>
+        </div>
+        <div class="latam"><strong>LATAM context</strong>Lean security teams can work a short list of root causes instead of a long list of findings, and keep the fixes as reviewed infrastructure as code.</div>
+      </article>
+
+      <article class="card" id="dd-pentest" data-p="posture" data-s="AWS Continuum">
+        <div class="tags"><span class="tag posture">Posture</span><span class="tag svc">AWS Continuum</span><span class="when">Sep 30</span></div>
+        <h3><a href="https://aws.amazon.com/about-aws/whats-new/2026/09/aws-continuum-penetration/" target="_blank" rel="noopener">AWS Continuum for Penetration Testing now in 6 more Regions</a></h3>
+        <p>AWS Continuum for Penetration Testing (AWS Security Agent) is a managed service for penetration testing web applications and APIs. It now runs in Asia Pacific (Seoul), Canada (Montreal), Europe (London), US East (Columbus), Europe (Paris) and Europe (Stockholm).</p>
+        <div class="sub">Key facts</div>
+        <div class="facts">
+          <div class="fact"><small>Targets</small><div>Web applications and APIs</div></div>
+          <div class="fact"><small>Use cases</small><div>Vulnerability assessment and evidence for frameworks such as PCI DSS and ISO 27001</div></div>
+          <div class="fact"><small>Why Regions matter</small><div>Run tests close to production and meet data residency needs</div></div>
+        </div>
+        <div class="latam"><strong>LATAM context</strong>South America (São Paulo) is not in this batch, but AWS Security Agent has been available there since July 1 (filter the explorer by AWS Security Agent to see it).</div>
+      </article>
+
+      <!-- NETWORK -->
+      <article class="card" id="dd-panw" data-p="network" data-s="Route 53">
+        <div class="tags"><span class="tag network">Network</span><span class="tag svc">Route 53</span><span class="when">Sep 29</span></div>
+        <h3><a href="https://aws.amazon.com/about-aws/whats-new/2026/09/route-53-dns-firewall-panw-dns-security-generally-available" target="_blank" rel="noopener">Route 53 Resolver DNS Firewall with Palo Alto Networks Advanced DNS Security is GA</a></h3>
+        <p>Security teams can detect and block malicious DNS traffic from their VPCs with PANW Advanced DNS Security rules, without deploying separate firewalls or changing VPC configuration. Generally available in 32 AWS Regions, after a preview that started in June.</p>
+        <div class="sub">Architecture</div>
+        <div class="flow">
+          <div class="node"><b>Workload in VPC</b><span>Sends a DNS query</span></div><span class="arrow">→</span>
+          <div class="node"><b>Route 53 Resolver</b><span>VPC resolver</span></div><span class="arrow">→</span>
+          <div class="node new"><b>DNS Firewall</b><span>Rule group with PANW Advanced DNS Security</span></div><span class="arrow">→</span>
+          <div class="node"><b>Allow or block</b><span>Command-and-control, malware, phishing, newly registered domains</span></div>
+        </div>
+        <div class="sub">Key facts</div>
+        <div class="facts">
+          <div class="fact"><small>Subscription sharing</small><div>AWS License Manager</div></div>
+          <div class="fact"><small>Central rollout</small><div>AWS Firewall Manager</div></div>
+        </div>
+        <div class="sub">Associate a rule group with a VPC</div>
+<pre>aws route53resolver associate-firewall-rule-group \
+  --firewall-rule-group-id rslvr-frg-EXAMPLE \
+  --vpc-id vpc-0abc123def \
+  --priority 100 \
+  --name panw-dns-security</pre>
+        <div class="latam"><strong>LATAM context</strong>Customers that already standardize on Palo Alto Networks on premises get the same DNS threat intelligence inside VPCs without inserting appliances into the traffic path.</div>
+      </article>
+
+      <article class="card" id="dd-dns-an" data-p="network" data-s="Route 53">
+        <div class="tags"><span class="tag network">Network</span><span class="tag svc">Route 53</span><span class="when">Oct 1</span></div>
+        <h3><a href="https://aws.amazon.com/about-aws/whats-new/2026/10/route-53-dns-analytics-insights/" target="_blank" rel="noopener">DNS analytics and insights for Route 53 Global Resolver and DNS Firewall</a></h3>
+        <p>Native CloudWatch integration gives visibility into DNS query patterns, DNS Firewall rule effectiveness and anomalous activity. A new Analytics tab in both consoles brings the views together.</p>
+        <div class="sub">Architecture</div>
+        <div class="flow">
+          <div class="node"><b>DNS query logs</b><span>Global Resolver and DNS Firewall</span></div><span class="arrow">→</span>
+          <div class="node new"><b>CloudWatch</b><span>Metrics, metric filters and Contributor Insights</span></div><span class="arrow">→</span>
+          <div class="node"><b>Alarms</b><span>Example: more than 10 blocked queries per VPC in one hour</span></div>
+        </div>
+        <div class="sub">Key facts</div>
+        <div class="facts">
+          <div class="fact"><small>Pricing</small><div>Standard CloudWatch pricing for the metrics you opt in to</div></div>
+          <div class="fact"><small>Pairs with</small><div>The PANW rules above: block and measure in the same service</div></div>
+        </div>
+        <div class="latam"><strong>LATAM context</strong>An alarm on blocked queries per VPC gives SOC teams an early signal that a workload is reaching out to known-bad domains.</div>
+      </article>
+
+      <article class="card" id="dd-kvs" data-p="network" data-s="PrivateLink">
+        <div class="tags"><span class="tag network">Network</span><span class="tag svc">PrivateLink</span><span class="when">Sep 30</span></div>
+        <h3><a href="https://aws.amazon.com/about-aws/whats-new/2026/09/kinesis-video-streams-vpc-privatelink/" target="_blank" rel="noopener">Amazon Kinesis Video Streams now supports VPC endpoints with AWS PrivateLink</a></h3>
+        <p>Control plane, video ingestion and playback traffic stays on the AWS network through interface VPC endpoints, with no internet gateway, NAT device or public IP.</p>
+        <div class="sub">Before vs. after</div>
+        <div class="ba">
+          <div class="before"><h4>Before</h4><pre>Camera / IoT device (private subnet)
+  → NAT gateway
+  → Internet gateway
+  → Kinesis Video Streams public endpoint</pre></div>
+          <div class="after"><h4>After</h4><pre>Camera / IoT device (private subnet)
+  → Interface VPC endpoint (+ endpoint policy)
+  → Kinesis Video Streams over AWS network</pre></div>
+        </div>
+        <div class="sub">Key facts</div>
+        <div class="facts">
+          <div class="fact"><small>Access control</small><div>VPC endpoint policies</div></div>
+          <div class="fact"><small>Availability</small><div>All Kinesis Video Streams Regions, including GovCloud (US) and China (Beijing)</div></div>
+        </div>
+        <div class="latam"><strong>LATAM context</strong>Video from branches and ATMs often carries personal data. Keeping it off the public internet removes NAT and public IPs from the design and narrows the attack surface.</div>
+      </article>
+
+      <!-- DATA -->
+      <article class="card" id="dd-sm" data-p="data" data-s="Secrets Manager">
+        <div class="tags"><span class="tag data">Data protection</span><span class="tag svc">Secrets Manager</span><span class="when">Oct 1</span></div>
+        <h3><a href="https://aws.amazon.com/about-aws/whats-new/2026/10/aws-secrets-manager-security-posture-recommendations" target="_blank" rel="noopener">Actionable security posture recommendations in the Secrets Manager console</a></h3>
+        <p>Secrets Manager now uses the AWS Recommended Actions framework to show tailored suggestions next to each secret.</p>
+        <div class="sub">Examples from the announcement</div>
+        <ol class="steps">
+          <li>Find secrets that need rotation configured.</li>
+          <li>Switch from the default service key to a customer managed KMS key.</li>
+          <li>Act on secret configuration improvements from a single view.</li>
+        </ol>
+        <div class="sub">Key facts</div>
+        <div class="facts">
+          <div class="fact"><small>Cost</small><div>No additional cost</div></div>
+          <div class="fact"><small>Availability</small><div>All Regions in the AWS partition where Secrets Manager is offered</div></div>
+        </div>
+        <div class="latam"><strong>LATAM context</strong>Rotation and key ownership come up in almost every LGPD and financial-sector review. The console now points at the secrets that fall short.</div>
+      </article>
+
+      <article class="card" id="dd-ol" data-p="data" data-s="S3">
+        <div class="tags"><span class="tag data">Data protection</span><span class="tag svc">S3</span><span class="when">Oct 1</span></div>
+        <h3><a href="https://aws.amazon.com/about-aws/whats-new/2026/10/s3-object-lock-variable-retention-event-holds-aws-govcloud/" target="_blank" rel="noopener">S3 Object Lock variable retention with event holds now in AWS GovCloud (US)</a></h3>
+        <p>Variable retention applies WORM protection to objects whose retention period starts with a future event, such as a contract closing or an audit completing. It launched in commercial Regions on September 8 and now reaches GovCloud (US-East) and GovCloud (US-West).</p>
+        <div class="sub">How event holds work</div>
+        <div class="flow">
+          <div class="node new"><b>Event hold</b><span>Placed with a retention duration</span></div><span class="arrow">→</span>
+          <div class="node"><b>Protected</b><span>WORM while the hold is in place</span></div><span class="arrow">→</span>
+          <div class="node"><b>Release</b><span>The triggering event happens</span></div><span class="arrow">→</span>
+          <div class="node"><b>Retention clock</b><span>Object kept for the specified duration</span></div>
+        </div>
+        <div class="sub">Key facts</div>
+        <div class="facts">
+          <div class="fact"><small>vs. legal hold</small><div>A legal hold ends protection on removal; an event hold starts the retention period</div></div>
+          <div class="fact"><small>Assessment</small><div>Cohasset Associates: SEC 17a-4(f), FINRA 4511, CFTC 1.31</div></div>
+        </div>
+        <div class="latam"><strong>LATAM context</strong>Record-keeping rules that count retention from the end of a contract or relationship fit this model directly, without keeping data longer than policy requires. In LATAM, use the commercial-Region launch from September 8.</div>
+      </article>
+
+      <!-- AI -->
+      <article class="card" id="dd-agc" data-p="ai" data-s="AgentCore">
+        <div class="tags"><span class="tag ai">AI security</span><span class="tag svc">AgentCore</span><span class="when">Oct 2</span></div>
+        <h3><a href="https://aws.amazon.com/about-aws/whats-new/2026/10/agentcore-gateway-private-tls-vpc/" target="_blank" rel="noopener">AgentCore Gateway supports private TLS certificates for VPC endpoints</a></h3>
+        <p>AgentCore Gateway now trusts TLS certificates signed by your own private certificate authority on MCP, OpenAPI and HTTP proxy targets, so agents connect to private endpoints in your VPC without an intermediate Application Load Balancer.</p>
+        <div class="sub">Architecture</div>
+        <div class="flow">
+          <div class="node"><b>AI agent</b><span>Calls a tool through the gateway</span></div><span class="arrow">→</span>
+          <div class="node new"><b>AgentCore Gateway</b><span>Trust anchor: your CA certificate (PEM) from S3 or Secrets Manager</span></div><span class="arrow">→</span>
+          <div class="node"><b>VPC Lattice</b><span>Private endpoint</span></div><span class="arrow">→</span>
+          <div class="node"><b>Internal tool or API</b><span>Certificate issued by your private CA</span></div>
+        </div>
+        <div class="sub">Key facts</div>
+        <div class="facts">
+          <div class="fact"><small>Targets</small><div>MCP servers, OpenAPI, HTTP proxy (passthrough)</div></div>
+          <div class="fact"><small>Availability</small><div>Regions with both AgentCore Gateway and VPC Lattice</div></div>
+        </div>
+        <div class="latam"><strong>LATAM context</strong>Banks wiring agents into internal credit, fraud or service APIs can keep their corporate PKI end to end instead of adding a load balancer just to terminate TLS.</div>
+      </article>
+
+      <div class="takeaways" data-keep>
+        <h3>Week 40 in one paragraph</h3>
+        <p>Enforcement got harder to bypass (GuardDuty organization policies), visibility gaps got easier to see (CloudTrail Event Coverage, Secrets Manager recommendations, DNS analytics), and fixes got grouped by root cause (Security Hub remediation plans). For LATAM teams, the practical starting point is the GuardDuty policy plus remediation plans: a uniform detection baseline, then a short list of root causes to fix.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Giovanni - Sr. Geo Security Specialist SA, AWS WWSO LATAM</span>
+    <span>Source: AWS What's New RSS feed, Dec 29, 2025 - {{RANGE_END}}. Summaries are condensed from each official announcement.</span>
+  </div>
+</footer>

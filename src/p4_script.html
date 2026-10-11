@@ -1,0 +1,236 @@
+
+<script>
+(function () {
+  const DATA = __DATA__;
+  const STATIC = __STATIC__;
+  const UI = __UI__;
+  const PILLARS = ['threat', 'identity', 'posture', 'network', 'data', 'ai'];
+  const LOCALE = { en: 'en-US', pt: 'pt-BR', es: 'es-MX' };
+  const MAXW = Math.max(...DATA.map(r => r.w));
+  const DEEP_WEEK = 40;
+  document.documentElement.style.setProperty('--weeks', MAXW);
+  const W1_MONDAY = Date.UTC(2025, 11, 29);
+  const state = { lang: 'en', pillar: 'all', service: 'all', week: 0, groupsShown: 6 };
+  const $ = (id) => document.getElementById(id);
+
+  function t(key, vars) {
+    let s = (UI[state.lang] && UI[state.lang][key]) || UI.en[key] || key;
+    if (vars) for (const k in vars) s = s.split('{' + k + '}').join(vars[k]);
+    return s;
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+  function fmtDay(d) { return new Intl.DateTimeFormat(LOCALE[state.lang], { month: 'short', day: 'numeric', timeZone: 'UTC' }).format(d); }
+  function weekRange(w) {
+    const a = new Date(W1_MONDAY + (w - 1) * 7 * 864e5), b = new Date(W1_MONDAY + ((w - 1) * 7 + 6) * 864e5);
+    return fmtDay(a) + ' - ' + fmtDay(b);
+  }
+  function itemDate(iso) { return fmtDay(new Date(iso + 'T00:00:00Z')); }
+  function pName(p) { return t('p_' + p); }
+
+  function match(r, skip) {
+    if (skip !== 'pillar' && state.pillar !== 'all' && r.p !== state.pillar) return false;
+    if (skip !== 'service' && state.service !== 'all' && r.s !== state.service) return false;
+    if (skip !== 'week' && state.week && r.w !== state.week) return false;
+    return true;
+  }
+
+  /* ---------- stats ---------- */
+  function renderStats() {
+    const svc = new Set(DATA.map(r => r.s)).size;
+    const wLast = DATA.filter(r => r.w === MAXW).length;
+    const tiles = [[DATA.length, t('statLaunches')], [MAXW, t('statWeeks')], [svc, t('statServices')], [wLast, t('statW40', { w: MAXW })]];
+    $('stats').innerHTML = tiles.map(([n, l]) => `<div class="stat"><b>${n}</b><span>${esc(l)}</span></div>`).join('');
+  }
+
+  /* ---------- controls ---------- */
+  function renderChips() {
+    const base = DATA.filter(r => match(r, 'pillar'));
+    const counts = {}; base.forEach(r => counts[r.p] = (counts[r.p] || 0) + 1);
+    const all = `<button class="chip" type="button" data-p="all" aria-pressed="${state.pillar === 'all'}">${esc(t('allPillars'))} <span class="n">${base.length}</span></button>`;
+    $('pillarChips').innerHTML = all + PILLARS.map(p =>
+      `<button class="chip" type="button" data-p="${p}" aria-pressed="${state.pillar === p}"><span class="dot" style="background:var(--${p})"></span>${esc(pName(p))} <span class="n">${counts[p] || 0}</span></button>`).join('');
+  }
+  function renderServiceSel() {
+    const base = DATA.filter(r => match(r, 'service'));
+    const counts = {}; DATA.forEach(r => counts[r.s] = 0); base.forEach(r => counts[r.s]++);
+    const names = Object.keys(counts).sort((a, b) => a.localeCompare(b));
+    $('serviceSel').innerHTML = `<option value="all">${esc(t('allServices'))} (${base.length})</option>` +
+      names.map(n => `<option value="${esc(n)}"${state.service === n ? ' selected' : ''}${counts[n] ? '' : ' disabled'}>${esc(n)} (${counts[n]})</option>`).join('');
+    $('serviceSel').value = state.service;
+  }
+  function renderWeekSel() {
+    const base = DATA.filter(r => match(r, 'week'));
+    const counts = {}; base.forEach(r => counts[r.w] = (counts[r.w] || 0) + 1);
+    let html = `<option value="0">${esc(t('allWeeks'))}</option>`;
+    for (let w = MAXW; w >= 1; w--) html += `<option value="${w}">${esc(t('weekOpt', { w, range: weekRange(w), n: counts[w] || 0 }))}</option>`;
+    $('weekSel').innerHTML = html;
+    $('weekSel').value = String(state.week);
+    $('prevWk').disabled = state.week === 1;
+    $('nextWk').disabled = state.week === MAXW || state.week === 0;
+  }
+
+  /* ---------- chart ---------- */
+  function renderChart() {
+    const base = DATA.filter(r => match(r, 'week'));
+    const per = Array.from({ length: MAXW + 1 }, () => ({}));
+    const tot = new Array(MAXW + 1).fill(0);
+    base.forEach(r => { per[r.w][r.p] = (per[r.w][r.p] || 0) + 1; tot[r.w]++; });
+    const max = Math.max(1, ...tot);
+    let bars = '', axis = '';
+    for (let w = 1; w <= MAXW; w++) {
+      const segs = PILLARS.filter(p => per[w][p]).map(p =>
+        `<div class="seg" style="height:${(per[w][p] / max) * 132}px;background:var(--${p})"></div>`).join('');
+      const cls = 'bar' + (state.week === w ? ' sel' : '') + (state.week && state.week !== w ? ' dim' : '');
+      const label = t('barLabel', { w, n: tot[w] });
+      bars += `<button type="button" class="${cls}" data-w="${w}" title="${esc(label)}" aria-label="${esc(label)}"><div class="stack">${segs}</div></button>`;
+      const show = w === 1 || w % 5 === 0 || w === state.week;
+      axis += `<span class="${w === state.week ? 'on' : ''}">${show ? 'W' + w : ''}</span>`;
+    }
+    $('chart').innerHTML = bars;
+    $('axis').innerHTML = axis;
+    $('legend').innerHTML = PILLARS.map(p => `<span><i style="background:var(--${p})"></i>${esc(pName(p))}</span>`).join('');
+  }
+
+  /* ---------- summaries ---------- */
+  function mixLine(rows) {
+    const c = {}; rows.forEach(r => c[r.p] = (c[r.p] || 0) + 1);
+    return PILLARS.filter(p => c[p]).sort((a, b) => c[b] - c[a]).map(p => `<span class="tag ${p}">${esc(pName(p))} · ${c[p]}</span>`).join('');
+  }
+  function topServices(rows, n) {
+    const c = {}; rows.forEach(r => c[r.s] = (c[r.s] || 0) + 1);
+    return Object.entries(c).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, n).map(([s, k]) => `${s} (${k})`).join(', ');
+  }
+  function renderSummary(rows) {
+    const box = $('weekSummary');
+    if (!state.week) {
+      const per = {}; rows.forEach(r => per[r.w] = (per[r.w] || 0) + 1);
+      const weeks = Object.keys(per).length;
+      if (!rows.length) { box.innerHTML = ''; return; }
+      const bw = Object.entries(per).sort((a, b) => b[1] - a[1] || b[0] - a[0])[0];
+      const half1 = rows.filter(r => r.w <= 20).length, half2 = rows.length - half1;
+      box.innerHTML = `<div class="week-summary"><h3>${esc(t('yearTitle', { w: MAXW }))}</h3>
+        <p>${esc(t('yearText', { n: rows.length, weeks, avg: (rows.length / MAXW).toFixed(1).replace('.', state.lang === 'en' ? '.' : ','), bw: bw[0], bn: bw[1] }))}</p>
+        <p>${esc(t('halves', { a: half1, b: half2, w: MAXW }))}</p>
+        <p><strong>${esc(t('topSvcs'))}</strong> ${esc(topServices(rows, 6))}</p>
+        <div class="mini-tags">${mixLine(rows)}</div></div>`;
+      return;
+    }
+    const w = state.week;
+    if (!rows.length) {
+      box.innerHTML = `<div class="week-summary"><h3>${esc(t('weekTitle', { w, range: weekRange(w) }))}</h3><p>${esc(t('weekNone'))}</p></div>`;
+      return;
+    }
+    const titles = rows.slice().sort((a, b) => a.d.localeCompare(b.d));
+    box.innerHTML = `<div class="week-summary"><h3>${esc(t('weekTitle', { w, range: weekRange(w) }))}</h3>
+      <p>${esc(t('weekText', { n: rows.length, first: titles[0].t }))}</p>
+      <p><strong>${esc(t('topSvcs'))}</strong> ${esc(topServices(rows, 5))}</p>
+      <div class="mini-tags">${mixLine(rows)}</div>
+      ${w === DEEP_WEEK ? `<p style="margin-top:10px"><a href="#deepdive">${esc(t('deepLink'))} →</a></p>` : ''}</div>`;
+  }
+
+  /* ---------- results ---------- */
+  function itemHTML(r) {
+    return `<div class="item"><div class="date">${esc(itemDate(r.d))}</div><div class="body">
+      <div class="tags"><span class="tag ${r.p}">${esc(pName(r.p))}</span><span class="tag svc">${esc(r.s)}</span></div>
+      <a class="title" href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)}</a>
+      <p>${esc(r.x)}</p></div></div>`;
+  }
+  function renderResults(rows) {
+    $('count').textContent = t('count', { n: rows.length });
+    if (!rows.length) { $('results').innerHTML = `<div class="empty">${esc(t('empty'))}</div>`; return; }
+    const byW = {}; rows.forEach(r => (byW[r.w] = byW[r.w] || []).push(r));
+    const weeks = Object.keys(byW).map(Number).sort((a, b) => b - a);
+    const shown = state.week ? weeks : weeks.slice(0, state.groupsShown);
+    let html = shown.map(w => {
+      const items = byW[w].sort((a, b) => b.d.localeCompare(a.d) || a.t.localeCompare(b.t));
+      const btn = state.week ? '' : `<button class="link-btn" type="button" data-goto="${w}">${esc(t('viewWeek'))} →</button>`;
+      return `<div class="wk-group"><div class="wk-head"><h3>W${w} · ${esc(weekRange(w))}</h3><span>${esc(t('groupHead', { n: items.length }))}</span>${btn}</div>${items.map(itemHTML).join('')}</div>`;
+    }).join('');
+    if (!state.week && weeks.length > shown.length) html += `<div class="more"><button type="button" id="moreBtn">${esc(t('showMore'))} (${weeks.length - shown.length})</button></div>`;
+    $('results').innerHTML = html;
+  }
+
+  /* ---------- deep dive visibility ---------- */
+  let ddNote = null;
+  function renderDeepDive() {
+    const sec = $('deepdive');
+    const on = state.week === 0 || state.week === 40;
+    sec.hidden = !on;
+    if (!on) return;
+    let any = 0;
+    document.querySelectorAll('#deepdive article.card').forEach(c => {
+      const ok = (state.pillar === 'all' || c.dataset.p === state.pillar) && (state.service === 'all' || c.dataset.s === state.service);
+      c.hidden = !ok; if (ok) any++;
+      const link = document.querySelector(`.sidenav a[href="#${c.id}"]`); if (link) link.hidden = !ok;
+    });
+    document.querySelectorAll('.sidenav .cat').forEach(cat => {
+      let n = cat.nextElementSibling, vis = false;
+      while (n && n.tagName === 'A') { if (!n.hidden) vis = true; n = n.nextElementSibling; }
+      cat.hidden = !vis;
+    });
+    if (!ddNote) { ddNote = document.createElement('div'); ddNote.className = 'empty'; ddNote.setAttribute('data-dyn', ''); document.querySelector('.dd-main').prepend(ddNote); }
+    ddNote.hidden = any > 0;
+    ddNote.textContent = t('ddNoMatch');
+  }
+
+  function render() {
+    const rows = DATA.filter(r => match(r));
+    renderStats(); renderChips(); renderServiceSel(); renderWeekSel(); renderChart(); renderSummary(rows); renderResults(rows); renderDeepDive();
+  }
+
+  /* ---------- events ---------- */
+  $('pillarChips').addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return; state.pillar = b.dataset.p; state.groupsShown = 6; render(); });
+  $('serviceSel').addEventListener('change', e => { state.service = e.target.value; state.groupsShown = 6; render(); });
+  $('weekSel').addEventListener('change', e => { state.week = +e.target.value; render(); });
+  $('prevWk').addEventListener('click', () => { state.week = state.week ? Math.max(1, state.week - 1) : MAXW; render(); });
+  $('nextWk').addEventListener('click', () => { if (state.week) { state.week = Math.min(MAXW, state.week + 1); render(); } });
+  $('clearBtn').addEventListener('click', () => { Object.assign(state, { pillar: 'all', service: 'all', week: 0, groupsShown: 6 }); render(); });
+  $('chart').addEventListener('click', e => { const b = e.target.closest('.bar'); if (!b) return; const w = +b.dataset.w; state.week = state.week === w ? 0 : w; render(); });
+  $('results').addEventListener('click', e => {
+    if (e.target.id === 'moreBtn') { state.groupsShown += 8; render(); return; }
+    const g = e.target.closest('[data-goto]'); if (g) { state.week = +g.dataset.goto; render(); $('explorer').scrollIntoView({ behavior: 'smooth' }); }
+  });
+
+  /* ---------- static translation ---------- */
+  const nodes = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode(n) {
+      const el = n.parentElement;
+      if (!el || el.closest('pre,code,script,style,[data-dyn]')) return NodeFilter.FILTER_REJECT;
+      return STATIC[n.nodeValue.replace(/\s+/g, ' ').trim()] ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    }
+  });
+  let n; while ((n = walker.nextNode())) {
+    const raw = n.nodeValue; nodes.push({ n, en: raw, k: raw.replace(/\s+/g, ' ').trim(), lead: raw.match(/^\s*/)[0], trail: raw.match(/\s*$/)[0] });
+  }
+  const ATTRS = [['prevWk', 'aria-label', 'prevAria'], ['nextWk', 'aria-label', 'nextAria']];
+  function setLang(l) {
+    state.lang = l;
+    for (const x of nodes) x.n.nodeValue = l === 'en' ? x.en : x.lead + STATIC[x.k][l] + x.trail;
+    ATTRS.forEach(([id, a, k]) => $(id).setAttribute(a, t(k)));
+    document.documentElement.lang = { en: 'en', pt: 'pt-BR', es: 'es' }[l];
+    document.querySelectorAll('.lang-switch button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === l));
+    try { localStorage.setItem('sec-tracker-lang', l); } catch (e) {}
+    render();
+  }
+  document.querySelectorAll('.lang-switch button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+  /* ---------- sidenav highlight ---------- */
+  const links = Array.from(document.querySelectorAll('.sidenav a'));
+  function onScroll() {
+    let cur = null;
+    for (const a of links) { const el = document.querySelector(a.getAttribute('href')); if (el && !el.hidden && el.getBoundingClientRect().top <= 120) cur = a; }
+    links.forEach(a => a.classList.toggle('active', a === cur));
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---------- init ---------- */
+  let lang = 'en';
+  try { const s = localStorage.getItem('sec-tracker-lang'); if (s && LOCALE[s]) lang = s; } catch (e) {}
+  const h = (location.hash || '').slice(1).toLowerCase();
+  if (LOCALE[h]) lang = h;
+  const wm = h.match(/^w(\d{1,2})$/); if (wm && +wm[1] >= 1 && +wm[1] <= MAXW) state.week = +wm[1];
+  setLang(lang);
+  onScroll();
+})();
+</script>

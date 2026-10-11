@@ -1,0 +1,66 @@
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top"><span class="badge">AWS</span><span>Security <span class="long">Launch </span>Tracker <span class="long">2026</span></span></a>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">Security, identity, governance &amp; compliance</p>
+    <h1>Every AWS security launch of 2026, week by week</h1>
+    <p class="lede">All security, identity, governance and compliance announcements from the AWS What's New feed between week 1 and week {{W}} of 2026. Filter by pillar or service, pick a week to drill down, and read the architecture deep dive for week 40.</p>
+    <div class="meta">
+      <div><strong>Author:</strong> Giovanni - Sr. Geo Security Specialist SA, AWS WWSO LATAM</div>
+      <div><strong>Updated:</strong> {{UPDATED}}</div>
+      <div><strong>Source:</strong> AWS What's New RSS feed</div>
+    </div>
+    <div class="stats" id="stats" data-dyn></div>
+  </div>
+</section>
+
+<main>
+<section class="block wrap" id="explorer">
+  <div class="section-title">
+    <h2>Launch explorer</h2>
+    <p>Weeks follow the ISO calendar (Monday to Sunday).</p>
+  </div>
+
+  <div class="controls">
+    <div class="ctrl-row">
+      <span class="ctrl-label">Pillar</span>
+      <div class="chips" id="pillarChips" data-dyn></div>
+    </div>
+    <div class="ctrl-row">
+      <span class="ctrl-label">Service</span>
+      <select id="serviceSel" data-dyn aria-label="Service"></select>
+      <span class="ctrl-label">Week</span>
+      <div class="week-nav">
+        <button class="icon-btn" id="prevWk" type="button" aria-label="Previous week">‹</button>
+        <select id="weekSel" data-dyn aria-label="Week"></select>
+        <button class="icon-btn" id="nextWk" type="button" aria-label="Next week">›</button>
+      </div>
+      <button class="link-btn" id="clearBtn" type="button">Clear filters</button>
+      <span class="count" id="count" data-dyn></span>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <div class="chart-head">
+      <span>Launches per week, stacked by pillar. Select a bar to drill into that week.</span>
+      <div class="legend" id="legend" data-dyn></div>
+    </div>
+    <div class="chart-scroll">
+      <div class="chart" id="chart" data-dyn role="group" aria-label="Launches per week"></div>
+      <div class="axis" id="axis" data-dyn></div>
+    </div>
+  </div>
+
+  <div id="weekSummary" data-dyn></div>
+  <div class="results" id="results" data-dyn></div>
+</section>

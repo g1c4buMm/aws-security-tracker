@@ -1,0 +1,2333 @@
+[
+ {
+  "d": "2025-12-29",
+  "w": 1,
+  "t": "Amazon OpenSearch UI supports CMK and increased metadata size",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2025/12/amazon-opensearch-ui-cmk-metadata/",
+  "p": "data",
+  "s": "KMS",
+  "x": "OpenSearch UI metadata encrypted with customer managed keys."
+ },
+ {
+  "d": "2025-12-30",
+  "w": 1,
+  "t": "AWS WAF is now available in the AWS Asia Pacific (New Zealand) Region",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2025/12/aws-waf-asia-pacific-new-zealand-region/",
+  "p": "network",
+  "s": "WAF",
+  "x": "WAF available in Asia Pacific (New Zealand)."
+ },
+ {
+  "d": "2025-12-30",
+  "w": 1,
+  "t": "AWS launches simplified import of CloudTrail Lake data in Amazon CloudWatch",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2025/12/aws-simplified-import-cloudtrail-lake-data-amazon-cloudwatch",
+  "p": "posture",
+  "s": "CloudTrail",
+  "x": "Import historical CloudTrail Lake data into CloudWatch."
+ },
+ {
+  "d": "2026-01-06",
+  "w": 2,
+  "t": "AWS Config now supports 21 new resource types",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/01/aws-config-new-resource-types",
+  "p": "posture",
+  "s": "Config",
+  "x": "21 new resource types including EC2, SageMaker and S3 Tables."
+ },
+ {
+  "d": "2026-01-07",
+  "w": 2,
+  "t": "AWS IAM Identity Center now supports IPv6",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/01/iam-identity-center-ipv6-dualstack-support/",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "New dual-stack endpoints for IPv6, IPv4 and dual-stack clients."
+ },
+ {
+  "d": "2026-01-08",
+  "w": 2,
+  "t": "Amazon MQ now supports certificate based authentication with mutual TLS for RabbitMQ brokers",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/01/amazon-mq-certificate-based-authentication-mutual-tls-rabbitmq/",
+  "p": "network",
+  "s": "Amazon MQ",
+  "x": "Amazon MQ now supports the ability for RabbitMQ brokers to perform authentication (determining who can log in) using X.509 client certificates with mutual TLS (mTLS)."
+ },
+ {
+  "d": "2026-01-12",
+  "w": 3,
+  "t": "Amazon Inspector adds Java Gradle support and expands ecosystem coverage",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/01/amazon-inspector-java-gradle-ecosystem/",
+  "p": "threat",
+  "s": "Inspector",
+  "x": "Lambda and ECR scanning add Java Gradle plus MySQL, PHP, Jenkins, Curl and more."
+ },
+ {
+  "d": "2026-01-21",
+  "w": 4,
+  "t": "AWS introduces additional policy details to access denied error messages",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/01/additional-policy-details-access-denied-error/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "AWS now includes the AWS Identity and Access Management (IAM) and AWS Organizations policy’s Amazon Resource Name (ARN) in access denied error messages in same account and same organization scenarios."
+ },
+ {
+  "d": "2026-01-21",
+  "w": 4,
+  "t": "Amazon EMR Serverless now supports AWS KMS customer managed keys for encrypting local disks",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/01/amazon-emr-serverless-aws-kms-customer-managed",
+  "p": "data",
+  "s": "KMS",
+  "x": "Local disks encrypted with customer managed keys."
+ },
+ {
+  "d": "2026-01-22",
+  "w": 4,
+  "t": "AWS Config launches 13 new managed rules",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/01/aws-config-launches-new-rules/",
+  "p": "posture",
+  "s": "Config",
+  "x": "AWS Config announces launch of an additional 13 managed Config rules for various use cases such as security, durability, and operations."
+ },
+ {
+  "d": "2026-01-22",
+  "w": 4,
+  "t": "AWS Security Agent now supports GitHub Enterprise Cloud",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/01/aws-security-agent-ghe-support",
+  "p": "posture",
+  "s": "AWS Security Agent",
+  "x": "AWS Security Agent now supports GitHub Enterprise Cloud, enabling customers to connect their GitHub Enterprise Organization and leverage AI-powered security capabilities across their private repositories."
+ },
+ {
+  "d": "2026-01-22",
+  "w": 4,
+  "t": "AWS expands Resource Control Policies support for Cognito and CloudWatch Logs",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/01/aws-expands-resource-control-policies",
+  "p": "identity",
+  "s": "Organizations",
+  "x": "AWS Resource Control Policies (RCPs) now provide support for Amazon Cognito and Amazon CloudWatch Logs."
+ },
+ {
+  "d": "2026-01-27",
+  "w": 5,
+  "t": "AWS Network Firewall now supports GenAI traffic visibility and enforcement with Web category-based filtering",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/01/aws-network-firewall-web-category-based-filtering",
+  "p": "network",
+  "s": "Network Firewall",
+  "x": "Filter by web category, including GenAI services, social media and streaming."
+ },
+ {
+  "d": "2026-01-29",
+  "w": 5,
+  "t": "Amazon Cognito introduces inbound federation Lambda triggers",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/01/amazon-cognito-inbound-federation-lambda-trigger/",
+  "p": "identity",
+  "s": "Cognito",
+  "x": "Amazon Cognito introduces inbound federation Lambda triggers that enable you to transform and customize federated user attributes during the authentication process."
+ },
+ {
+  "d": "2026-01-29",
+  "w": 5,
+  "t": "Change the server-side encryption type of Amazon S3 objects",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/01/change-the-server-side-encryption-type-of-s3-objects",
+  "p": "data",
+  "s": "S3",
+  "x": "UpdateObjectEncryption API changes encryption keys without moving data, at scale via Batch Operations."
+ },
+ {
+  "d": "2026-02-02",
+  "w": 6,
+  "t": "AWS Multi-party approval now requires one-time password verification for voting",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-multi-party-approval-requires-one-time-password-verification-for-voting",
+  "p": "identity",
+  "s": "Multi-party approval",
+  "x": "OTP on approver votes blocks admins from impersonating approvers."
+ },
+ {
+  "d": "2026-02-02",
+  "w": 6,
+  "t": "AWS STS now supports validation of select identity provider specific claims from Google, GitHub, CircleCI and OCI",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/01/aws-sts-supports-validation-identity-provider-claims",
+  "p": "identity",
+  "s": "IAM",
+  "x": "AWS Security Token Service (STS) now supports validation of select identity provider specific claims from Google, GitHub, CircleCI and Oracle Cloud Infrastructure in IAM role trust policies and resource control…"
+ },
+ {
+  "d": "2026-02-02",
+  "w": 6,
+  "t": "Amazon CloudFront announces mutual TLS support for origins",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/01/amazon-cloudfront-mutual-tls-for-origins/",
+  "p": "network",
+  "s": "CloudFront",
+  "x": "Origins verify requests come only from authorized CloudFront distributions via mTLS."
+ },
+ {
+  "d": "2026-02-03",
+  "w": 6,
+  "t": "AWS IAM Identity Center enables account access and application use in multiple AWS Regions",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-iam-identity-center-multi-region-aws-account-access-and-application-deployment",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "Replicate Identity Center from the primary Region to additional Regions for access resilience."
+ },
+ {
+  "d": "2026-02-04",
+  "w": 6,
+  "t": "Amazon EC2 and VPC now display related resources for security groups",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-console-related-resources-generally-available",
+  "p": "network",
+  "s": "VPC",
+  "x": "Amazon Web Services (AWS) is announcing the general availability of the \"Related resources\" tab for security groups in the Amazon EC2 and VPC consoles."
+ },
+ {
+  "d": "2026-02-06",
+  "w": 6,
+  "t": "AWS Config now supports 30 new resource types",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-config-new-resource-types",
+  "p": "posture",
+  "s": "Config",
+  "x": "AWS Config now supports 30 additional AWS resource types across key services including Amazon EKS, Amazon Q, and AWS IoT."
+ },
+ {
+  "d": "2026-02-06",
+  "w": 6,
+  "t": "AWS Network Firewall announces new price reductions",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-network-firewall-new-price-reduction/",
+  "p": "network",
+  "s": "Network Firewall",
+  "x": "NAT Gateway discounts when chained and no extra charge for TLS Advanced Inspection."
+ },
+ {
+  "d": "2026-02-11",
+  "w": 7,
+  "t": "AWS Lake Formation enhances cross-account sharing",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-lake-formation-cross-account-sharing",
+  "p": "data",
+  "s": "Lake Formation",
+  "x": "AWS Lake Formation now enhances cross-account sharing, allowing you to share hundreds of thousands of tables across accounts."
+ },
+ {
+  "d": "2026-02-11",
+  "w": 7,
+  "t": "AWS Payment Cryptography Achieves Cartes Bancaires Approval",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/payment-cryptography-cartes-bancaires",
+  "p": "data",
+  "s": "Payment Cryptography",
+  "x": "Today, AWS Payment Cryptography has become one of the first cloud-based payment cryptography services to obtain approval from Groupement des Cartes Bancaires (CB), France's national card payment network."
+ },
+ {
+  "d": "2026-02-12",
+  "w": 7,
+  "t": "AWS Backup adds cross-Region database snapshot copy to logically air-gapped vaults",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-backup-adds-cross-region-database-snapshot-logically-air-gapped-vaults/",
+  "p": "data",
+  "s": "AWS Backup",
+  "x": "AWS Backup now supports single-action database snapshot copies to logically air-gapped vaults across AWS Regions."
+ },
+ {
+  "d": "2026-02-12",
+  "w": 7,
+  "t": "AWS expands Resource Control Policies support to Amazon DynamoDB",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-expands-resource-control-policies-amazon",
+  "p": "identity",
+  "s": "Organizations",
+  "x": "AWS Resource Control Policies (RCPs) now support Amazon DynamoDB."
+ },
+ {
+  "d": "2026-02-12",
+  "w": 7,
+  "t": "Amazon Bedrock expands support for AWS PrivateLink",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/amazon-bedrock-expands-aws-privatelink-support-openai-api-endpoints/",
+  "p": "ai",
+  "s": "Bedrock",
+  "x": "Amazon Bedrock is a fully managed service that provides secure, enterprise-grade access to high-performing foundation models from leading AI companies."
+ },
+ {
+  "d": "2026-02-16",
+  "w": 8,
+  "t": "AWS Backup announces PrivateLink support for SAP HANA on AWS",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-backup-announces-privatelink-sap-hana-aws/",
+  "p": "network",
+  "s": "AWS Backup",
+  "x": "SAP HANA backup traffic over PrivateLink, off the public internet."
+ },
+ {
+  "d": "2026-02-16",
+  "w": 8,
+  "t": "Amazon Aurora now supports Server-Side Encryption at Rest by default",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/amazon-aurora-server-side-encryption-at-rest",
+  "p": "data",
+  "s": "KMS",
+  "x": "All new Aurora clusters encrypted by default, no cost or performance impact."
+ },
+ {
+  "d": "2026-02-18",
+  "w": 8,
+  "t": "AWS Certificate Manager updates default certificate validity to comply with new guidelines",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-certificate-manager-updates-default/",
+  "p": "data",
+  "s": "Certificate Manager",
+  "x": "Public certificates now valid for at most 198 days per CA/Browser Forum mandate."
+ },
+ {
+  "d": "2026-02-18",
+  "w": 8,
+  "t": "Amazon Managed Grafana now supports AWS KMS customer managed keys",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/amazon-managed-grafana-customer-managed-keys",
+  "p": "data",
+  "s": "KMS",
+  "x": "Grafana workspace data encrypted with customer managed keys."
+ },
+ {
+  "d": "2026-02-19",
+  "w": 8,
+  "t": "AWS IAM Identity Center is now available in the Asia Pacific (New Zealand) AWS Region",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-iam-identity-center-asia-pacific-new-zealand-region/",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "Identity Center now in 38 AWS Regions."
+ },
+ {
+  "d": "2026-02-23",
+  "w": 9,
+  "t": "AWS IAM Policy Autopilot is now available as a Kiro Power",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-iam-policy-autopilot-kiro-power/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "AWS IAM Policy Autopilot, the open source static code analysis tool launched at re:Invent 2025, is now available as a Kiro power to bring policy expertise to agentic AI development."
+ },
+ {
+  "d": "2026-02-24",
+  "w": 9,
+  "t": "AWS WAF announces AI activity dashboard for visibility into AI bot and agent traffic",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-waf-ai-activity-dashboard/",
+  "p": "network",
+  "s": "WAF",
+  "x": "Dashboard for AI bot and agent traffic; Bot Control tracks 650+ bots."
+ },
+ {
+  "d": "2026-02-25",
+  "w": 9,
+  "t": "AWS Security Agent adds support for penetration tests on shared VPCs across AWS accounts",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-security-agent-adds-penetration-tests-shared/",
+  "p": "posture",
+  "s": "AWS Security Agent",
+  "x": "AWS Security Agent now enables customers to run penetration tests against Virtual Private Cloud (VPC) resources shared from other AWS accounts within the same organization."
+ },
+ {
+  "d": "2026-02-26",
+  "w": 9,
+  "t": "AWS Security Hub launches Extended plan for pay-as-you-go partner solutions",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/sec-hub-extended/",
+  "p": "posture",
+  "s": "Security Hub",
+  "x": "GA of Security Hub Extended: partner solutions through a single-vendor, pay-as-you-go plan."
+ },
+ {
+  "d": "2026-02-26",
+  "w": 9,
+  "t": "Amazon Cognito enhances client secret management with secret rotation and custom secrets",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/amazon-cognito-client-secret-lifecycle/",
+  "p": "identity",
+  "s": "Cognito",
+  "x": "Amazon Cognito enhances client secret lifecycle management for app clients of Cognito user pools by adding client secret rotation and support for custom client secrets."
+ },
+ {
+  "d": "2026-02-27",
+  "w": 9,
+  "t": "AWS IAM Identity Center now supports IPv6 dual-stack endpoints in Asia Pacific (Taipei) and GovCloud (US)",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-iam-identity-center-ipv6-asia-pacific-govcloud/",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "Completes global IPv6 dual-stack availability."
+ },
+ {
+  "d": "2026-02-27",
+  "w": 9,
+  "t": "AWS Network Firewall now supports firewall state change notifications through Amazon EventBridge",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/firewall-state-change-notifications/",
+  "p": "network",
+  "s": "Network Firewall",
+  "x": "Real-time EventBridge events for configuration and endpoint changes."
+ },
+ {
+  "d": "2026-02-27",
+  "w": 9,
+  "t": "AWS Resource Access Manager now supports maintaining shares when accounts change organizations",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-resource-access-manager/",
+  "p": "identity",
+  "s": "Organizations",
+  "x": "AWS Resource Access Manager (RAM) now supports a resource share configuration that allows you to maintain resource sharing continuity when accounts move between AWS Organizations."
+ },
+ {
+  "d": "2026-03-01",
+  "w": 9,
+  "t": "AWS announces pricing for VPC Encryption Controls",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/vpc-encryption-controls-pricing/",
+  "p": "network",
+  "s": "VPC",
+  "x": "AWS is launching pricing for VPC Encryption Controls, a security and compliance feature that enables you to audit and enforce encryption-in-transit of all traffic flows within and across Virtual Private Clouds (VPCs)…"
+ },
+ {
+  "d": "2026-03-04",
+  "w": 10,
+  "t": "AWS simplifies IAM role creation and setup in service workflows",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/aws-simplifies-iam-role-creation-and-setup/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "Create and customize IAM roles inside service console workflows."
+ },
+ {
+  "d": "2026-03-04",
+  "w": 10,
+  "t": "Amazon GameLift Servers launches DDoS Protection",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/amazon-gamelift-servers-ddos-protection/",
+  "p": "network",
+  "s": "Shield",
+  "x": "We’re excited to announce Amazon GameLift Servers DDoS Protection, a new feature that helps game developers protect session-based multiplayer games that utilize Amazon GameLift Servers to help improve overall game…"
+ },
+ {
+  "d": "2026-03-05",
+  "w": 10,
+  "t": "AWS Shield network security director findings are now available in AWS Security Hub",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/network-security-director-findings/",
+  "p": "network",
+  "s": "Shield",
+  "x": "Missing or misconfigured WAF, security groups and NACLs surfaced in Security Hub."
+ },
+ {
+  "d": "2026-03-05",
+  "w": 10,
+  "t": "Multi-party approval now supports approval team baselining",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/multi-party-approval-team-baselining/",
+  "p": "identity",
+  "s": "Multi-party approval",
+  "x": "Multi-party approval (MPA) now supports MPA administrators running test approvals to confirm that their approval team is set up correctly and that approvers are active and reachable."
+ },
+ {
+  "d": "2026-03-09",
+  "w": 11,
+  "t": "Amazon Cognito is now available in Asia Pacific (Taipei) and Asia Pacific (New Zealand) Regions",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/cognito-taipei-and-new-zealand-regions/",
+  "p": "identity",
+  "s": "Cognito",
+  "x": "Amazon Cognito is now available in the AWS Asia Pacific (Taipei) and Asia Pacific (New Zealand) Regions."
+ },
+ {
+  "d": "2026-03-09",
+  "w": 11,
+  "t": "IAM Roles Anywhere now supports post-quantum digital certificates",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/iam-roles-anywhere-post-quantum-digital-certificates",
+  "p": "identity",
+  "s": "IAM",
+  "x": "AWS Identity and Access Management (IAM) Roles Anywhere now supports the FIPS 204 Module-Lattice Digital Signature Standard (ML-DSA), a quantum-resistant digital signature algorithm standardized by the National…"
+ },
+ {
+  "d": "2026-03-11",
+  "w": 11,
+  "t": "AWS Firewall Manager launches in AWS Asia Pacific (New Zealand) Region",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/aws-firewall-manager-launches-asia-pacific-new-zealand/",
+  "p": "network",
+  "s": "Firewall Manager",
+  "x": "Firewall Manager available in Asia Pacific (New Zealand)."
+ },
+ {
+  "d": "2026-03-12",
+  "w": 11,
+  "t": "AWS Backup adds logically air-gapped vault support for Amazon EKS",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/aws-backup-logically-air-gapped-vault-amazon-eks/",
+  "p": "data",
+  "s": "AWS Backup",
+  "x": "AWS Backup logically air-gapped vault now supports Amazon EKS."
+ },
+ {
+  "d": "2026-03-12",
+  "w": 11,
+  "t": "AWS Private CA Connector for SCEP now supports AWS PrivateLink",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/aws-private-ca-connector-scep-privatelink/",
+  "p": "data",
+  "s": "Private CA",
+  "x": "AWS Private CA Connector for SCEP now supports AWS PrivateLink, allowing your clients to request certificates from within your Amazon Virtual Private Cloud (VPC) without traversing the public internet."
+ },
+ {
+  "d": "2026-03-13",
+  "w": 11,
+  "t": "AWS Network Firewall Launch in the AWS European Sovereign Cloud",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/network-firewall-european-sovereign-cloud-region/",
+  "p": "network",
+  "s": "Network Firewall",
+  "x": "Network Firewall available in the AWS European Sovereign Cloud."
+ },
+ {
+  "d": "2026-03-13",
+  "w": 11,
+  "t": "AWS Security Agent now available with Service Quotas",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/aws-security-agent-available-with-service/",
+  "p": "posture",
+  "s": "AWS Security Agent",
+  "x": "Amazon Security Agent now supports AWS Service Quotas, giving users a centralized way to view applied limits, monitor utilization, and scale case workloads without hitting unexpected service constraints."
+ },
+ {
+  "d": "2026-03-17",
+  "w": 12,
+  "t": "AWS Security Agent now supports downloading penetration testing reports",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/aws-security-agent-generates-customizable/",
+  "p": "posture",
+  "s": "AWS Security Agent",
+  "x": "AWS Security Agent now provides the ability to download penetration testing reports."
+ },
+ {
+  "d": "2026-03-18",
+  "w": 12,
+  "t": "AWS Config launches 75 new managed rules",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/02/aws-config-launches-new-rules/",
+  "p": "posture",
+  "s": "Config",
+  "x": "AWS Config announces the launch of an additional 75 managed Config rules for various use cases such as security, durability, and operations."
+ },
+ {
+  "d": "2026-03-18",
+  "w": 12,
+  "t": "Amazon Inspector expands agentless EC2 scanning and introduces Windows KB-based findings",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/amazon-inspector-agentless-ec2-scanning-windows/",
+  "p": "threat",
+  "s": "Inspector",
+  "x": "Agentless EC2 scanning now covers Windows OS vulnerabilities with KB-based findings."
+ },
+ {
+  "d": "2026-03-20",
+  "w": 12,
+  "t": "AWS DataSync now supports AWS Secrets Manager for all location types",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/aws-datasync-secrets-manager/",
+  "p": "data",
+  "s": "Secrets Manager",
+  "x": "Secrets Manager credentials for HDFS, FSx for Windows and FSx for ONTAP locations."
+ },
+ {
+  "d": "2026-03-25",
+  "w": 13,
+  "t": "Amazon Route 53 Profiles now supports granular IAM permissions for resource and VPC associations",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/amazon-route-53-profiles-granular-iam/",
+  "p": "network",
+  "s": "Route 53",
+  "x": "Amazon Route 53 Profiles now supports granular AWS Identity and Access Management (IAM) permissions, allowing you to control which users can manage specific resource types and VPC associations within your Profiles."
+ },
+ {
+  "d": "2026-03-27",
+  "w": 13,
+  "t": "Amazon CloudWatch Logs now supports data protection,  OpenSearch PPL and OpenSearch SQL for the Infrequent Access ingestion class",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/amazon-cloudwatch-infrequent-access-log-class/",
+  "p": "data",
+  "s": "CloudWatch",
+  "x": "Amazon CloudWatch Logs now supports expanded analytics and data protection capabilities for the Infrequent Access (Logs IA) ingestion class, including support for data protection, OpenSearch’s Piped Processing…"
+ },
+ {
+  "d": "2026-03-30",
+  "w": 14,
+  "t": "AWS Security Hub is now available in AWS GovCloud (US) Regions",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/aws-security-hub-govcloud-us-regions/",
+  "p": "posture",
+  "s": "Security Hub",
+  "x": "Security Hub available in GovCloud (US-East) and GovCloud (US-West)."
+ },
+ {
+  "d": "2026-03-31",
+  "w": 14,
+  "t": "AWS IAM Identity Center is now available in AWS European Sovereign Cloud (Germany) Region",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/aws-iam-identity-center-european-sovereign-cloud-germany-region/",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "Identity Center available in the AWS European Sovereign Cloud."
+ },
+ {
+  "d": "2026-03-31",
+  "w": 14,
+  "t": "AWS Organizations now provides organization paths in API responses",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/aws-organizations-paths-api-responses/",
+  "p": "identity",
+  "s": "Organizations",
+  "x": "AWS Organizations now returns the complete organizational path for accounts and organizational units (OUs) directly in API responses, eliminating the need for multiple API calls to traverse organizational hierarchies."
+ },
+ {
+  "d": "2026-03-31",
+  "w": 14,
+  "t": "AWS Private CA now publishes utilization metrics to Amazon CloudWatch",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/aws-private-ca-publishes-metrics/",
+  "p": "data",
+  "s": "Private CA",
+  "x": "AWS Private Certificate Authority (AWS Private CA) now publishes certificate authority (CA) utilization metrics to Amazon CloudWatch, providing visibility into your CA usage."
+ },
+ {
+  "d": "2026-03-31",
+  "w": 14,
+  "t": "AWS Security Agent on-demand penetration testing is now generally available",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/aws-security-agent-ondemand-penetration/",
+  "p": "posture",
+  "s": "AWS Security Agent",
+  "x": "Today, AWS announced the general availability of AWS Security Agent for on-demand penetration testing in six AWS Regions."
+ },
+ {
+  "d": "2026-03-31",
+  "w": 14,
+  "t": "Amazon CloudWatch now supports ingesting Security Hub CSPM findings with organization-wide enablement",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/amazon-cloudwatch-securityhub-findings/",
+  "p": "posture",
+  "s": "CloudWatch",
+  "x": "Security Hub CSPM findings ingested into CloudWatch Logs in ASFF or OCSF."
+ },
+ {
+  "d": "2026-04-01",
+  "w": 14,
+  "t": "AWS VPC Encryption Controls now available in AWS GovCloud (US) Regions",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/aws-vpc-encryption-controls/",
+  "p": "network",
+  "s": "VPC",
+  "x": "AWS launches VPC Encryption Controls in AWS GovCloud (US) Regions to make it easy to audit and enforce encryption in transit within and across Amazon Virtual Private Clouds (VPC), and demonstrate compliance with…"
+ },
+ {
+  "d": "2026-04-01",
+  "w": 14,
+  "t": "Amazon SES Mail Manager adds new features for enhanced security and email processing",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/ses-mail-manager-introduces-new-features/",
+  "p": "network",
+  "s": "SES",
+  "x": "Optional TLS and mTLS on ingress endpoints plus Lambda and Bounce rule actions."
+ },
+ {
+  "d": "2026-04-03",
+  "w": 14,
+  "t": "AWS Secrets Manager console now supports custom input for AWS KMS keys",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/aws-secrets-manager-console-custom-kms-key-input/",
+  "p": "data",
+  "s": "Secrets Manager",
+  "x": "Enter a customer managed KMS key ARN directly when creating secrets."
+ },
+ {
+  "d": "2026-04-03",
+  "w": 14,
+  "t": "Amazon Bedrock Guardrails announces general availability of cross-account safeguards",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/bedrock-guardrails-cross-account-safeguards/",
+  "p": "ai",
+  "s": "Bedrock Guardrails",
+  "x": "Amazon Bedrock Guardrails now enables centralized enforcement of safety controls across all AWS accounts within an organization through cross-account safeguards."
+ },
+ {
+  "d": "2026-04-06",
+  "w": 15,
+  "t": "Amazon S3 starts rolling out new security best practice to new and existing buckets by default",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/s3-default-bucket-security-setting/",
+  "p": "data",
+  "s": "S3",
+  "x": "As announced on November 19, 2025, Amazon S3 is now deploying a new default bucket security setting which will automatically disable server-side encryption with customer-provided keys (SSE-C) for all new general…"
+ },
+ {
+  "d": "2026-04-06",
+  "w": 15,
+  "t": "Amazon Verified Permissions now supports policy store aliases and named policies and policy templates",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-verified-permissions-policy-store/",
+  "p": "identity",
+  "s": "Verified Permissions",
+  "x": "Today, AWS announces support for policy store aliases and named policies and policy templates in Amazon Verified Permissions, simplifying multi-tenant deployments and day-to-day policy management."
+ },
+ {
+  "d": "2026-04-07",
+  "w": 15,
+  "t": "AWS Certificate Manager now supports native certificate search",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/03/aws-certificate-manager-search/",
+  "p": "data",
+  "s": "Certificate Manager",
+  "x": "Console search by domain, ARN or validity."
+ },
+ {
+  "d": "2026-04-09",
+  "w": 15,
+  "t": "AWS Agent Registry for centralized agent discovery and governance is now available in Preview",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/aws-agent-registry-in-agentcore-preview/",
+  "p": "ai",
+  "s": "AgentCore",
+  "x": "Preview of a private catalog for agents, tools, skills and MCP servers."
+ },
+ {
+  "d": "2026-04-09",
+  "w": 15,
+  "t": "AWS Private CA now supports customer managed permissions for cross-account sharing",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/aws-private-ca-customer-managed-permissions/",
+  "p": "data",
+  "s": "Private CA",
+  "x": "Customer managed AWS RAM permissions for sharing CAs across accounts."
+ },
+ {
+  "d": "2026-04-10",
+  "w": 15,
+  "t": "Amazon CloudWatch pipelines introduces new compliance and governance capabilities",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/cloudwatch-pipelines-compliance-governance/",
+  "p": "posture",
+  "s": "CloudWatch",
+  "x": "Amazon CloudWatch pipelines now includes new compliance and governance capabilities to help you maintain data integrity and control access when processing logs."
+ },
+ {
+  "d": "2026-04-14",
+  "w": 16,
+  "t": "AWS Secrets Manager now supports hybrid post-quantum TLS",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/aws-secrets-manager-post-quantum-tls/",
+  "p": "data",
+  "s": "Secrets Manager",
+  "x": "ML-KEM hybrid key exchange on TLS connections to Secrets Manager."
+ },
+ {
+  "d": "2026-04-15",
+  "w": 16,
+  "t": "AWS Payment Cryptography now available in South America (São Paulo)",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/aws-payment-cryptography-south/",
+  "p": "data",
+  "s": "Payment Cryptography",
+  "x": "AWS Payment Cryptography has expanded its global presence with availability in South America (São Paulo)."
+ },
+ {
+  "d": "2026-04-16",
+  "w": 16,
+  "t": "Amazon CloudWatch now supports cross-region telemetry auditing and enablement rules",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-cloudwatch-cross-region-enablement-rules/",
+  "p": "posture",
+  "s": "CloudWatch",
+  "x": "Audit and enable EC2, VPC and CloudTrail telemetry across Regions from one place."
+ },
+ {
+  "d": "2026-04-20",
+  "w": 17,
+  "t": "AWS Managed Microsoft AD now supports Kerberos Encryption audit event logs",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/aws-managed-microsoft-ad-kerberose-encrption-logs/",
+  "p": "identity",
+  "s": "Directory Service",
+  "x": "Starting today, AWS Managed Microsoft AD supports forwarding Kerberos Encryption audit event logs (Event IDs 201–209) to Amazon CloudWatch Logs."
+ },
+ {
+  "d": "2026-04-20",
+  "w": 17,
+  "t": "Amazon EKS enhances cluster governance with new IAM condition keys",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-eks-iam-condition-keys/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "Seven new IAM condition keys for EKS cluster APIs, enforceable through SCPs."
+ },
+ {
+  "d": "2026-04-21",
+  "w": 17,
+  "t": "AWS Backup adds Amazon Redshift Serverless and Aurora DSQL support for AWS Organizations backup policies",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/backup-policies-aurora-dsql-redshift-serverless/",
+  "p": "data",
+  "s": "AWS Backup",
+  "x": "AWS Backup now supports Amazon Redshift Serverless namespaces and Amazon Aurora DSQL clusters as resource types in AWS Organizations backup policies."
+ },
+ {
+  "d": "2026-04-22",
+  "w": 17,
+  "t": "AWS Secrets Manager extends managed external secrets to MongoDB Atlas and Confluent Cloud",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/secrets-manager-managed-external-secrets-mongodb-confluent/",
+  "p": "data",
+  "s": "Secrets Manager",
+  "x": "Central rotation for MongoDB Atlas and Confluent Cloud secrets."
+ },
+ {
+  "d": "2026-04-22",
+  "w": 17,
+  "t": "Enhancements to AWS Network Firewall Managed Rules from AWS Marketplace Partners",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/marketplace-managed-rules-enhancements/",
+  "p": "network",
+  "s": "Network Firewall",
+  "x": "Partner rule groups up to 10M domain indicators and 1M IPs."
+ },
+ {
+  "d": "2026-04-24",
+  "w": 17,
+  "t": "Amazon Bedrock AgentCore Gateway and Identity support VPC egress",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2024/04/agentcore-gateway-identity-vpc/",
+  "p": "ai",
+  "s": "AgentCore",
+  "x": "Amazon Bedrock AgentCore Gateway and Identity now provide secure and controlled egress traffic management for your applications, enabling seamless communication with resources in your Virtual Private Cloud (VPC)."
+ },
+ {
+  "d": "2026-04-27",
+  "w": 18,
+  "t": "AWS KMS now tracks last usage of all KMS keys",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/aws-kms-tracks-last-usage-kms-keys/",
+  "p": "data",
+  "s": "KMS",
+  "x": "Shows the last cryptographic operation per key, no log analysis needed."
+ },
+ {
+  "d": "2026-04-30",
+  "w": 18,
+  "t": "AWS Payment Cryptography adds integration to Multi-party approval for sensitive operations",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-payment-cryptography-multi-party/",
+  "p": "data",
+  "s": "Payment Cryptography",
+  "x": "Two or more approvers required to import root certificates."
+ },
+ {
+  "d": "2026-04-30",
+  "w": 18,
+  "t": "AWS Payment Cryptography now supports paper-based key exchange",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-payment-cryptography/",
+  "p": "data",
+  "s": "Payment Cryptography",
+  "x": "AWS Payment Cryptography now supports Physical Key Exchange, a new PCI PIN and P2PE compliant feature for performing paper-based cryptographic key exchange with the service without needing to maintain your own secure…"
+ },
+ {
+  "d": "2026-04-30",
+  "w": 18,
+  "t": "Amazon Bedrock AgentCore Identity now supports On-Behalf-Of (OBO) token exchange",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-bedrock-agentcore/",
+  "p": "ai",
+  "s": "AgentCore",
+  "x": "Amazon Bedrock AgentCore Identity now supports On-Behalf-Of (OBO) token exchange, enabling developers to build agents that securely access protected resources on behalf of authenticated users — without requiring…"
+ },
+ {
+  "d": "2026-04-30",
+  "w": 18,
+  "t": "Amazon OpenSearch Service now supports index-level encryption",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-opensearch-service-supports-index-level-encryption/",
+  "p": "data",
+  "s": "KMS",
+  "x": "Per-index encryption with different customer managed keys on the same domain."
+ },
+ {
+  "d": "2026-05-01",
+  "w": 18,
+  "t": "IAM Roles Anywhere now enforces VPC endpoint policies for the CreateSession API",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/iam-roles-anywhere-vpc/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "AWS Identity and Access Management (IAM) Roles Anywhere now provides the capability to configure Virtual Private Cloud (VPC) endpoint policies for the IAM Roles Anywhere CreateSession API."
+ },
+ {
+  "d": "2026-05-04",
+  "w": 19,
+  "t": "AWS Payment Cryptography announces support for cross account key sharing",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/payment-cryptography-resource/",
+  "p": "data",
+  "s": "Payment Cryptography",
+  "x": "AWS Payment Cryptography now supports cross account sharing of keys using resource-based policies (RBP)."
+ },
+ {
+  "d": "2026-05-04",
+  "w": 19,
+  "t": "Amazon EventBridge supports data plane logging to AWS CloudTrail",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-eventbridge-data-aws-cloudtrail/",
+  "p": "posture",
+  "s": "CloudTrail",
+  "x": "EventBridge data plane API calls logged in CloudTrail."
+ },
+ {
+  "d": "2026-05-05",
+  "w": 19,
+  "t": "AWS IAM now provides higher maximum quotas for roles, role trust policies, instance profiles, managed policies, and identity providers",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-iam-increased-quotas/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "AWS Identity and Access Management (IAM) has increased maximum quotas for six resources: Customer managed policies per account (5,000 to 10,000) Instance profiles per account (5,000 to 10,000) Managed policies per…"
+ },
+ {
+  "d": "2026-05-06",
+  "w": 19,
+  "t": "AWS Directory Service expands directory security settings with STIG-aligned controls for Managed AD",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/add-security-settings-stig-aws-microsoft-ad/",
+  "p": "identity",
+  "s": "Directory Service",
+  "x": "AWS Directory Service for Microsoft Active Directory (AWS Managed Microsoft AD) now has expanded its security settings to include STIG-aligned configurations for high-impact security areas."
+ },
+ {
+  "d": "2026-05-06",
+  "w": 19,
+  "t": "The AWS MCP Server is now generally available",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-mcp-server/",
+  "p": "ai",
+  "s": "IAM",
+  "x": "Managed MCP server giving AI coding agents secure, auditable AWS access."
+ },
+ {
+  "d": "2026-05-07",
+  "w": 19,
+  "t": "AWS Advanced JDBC Wrapper now provides client-side encryption",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-advanced-jdbc-wrapper-encryption/",
+  "p": "data",
+  "s": "KMS",
+  "x": "Column-level client-side encryption for Aurora and RDS via a KMS plugin."
+ },
+ {
+  "d": "2026-05-07",
+  "w": 19,
+  "t": "AWS WAF introduces dynamic label interpolation for custom request and response handling",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-waf-dynamic-label-interpolation/",
+  "p": "network",
+  "s": "WAF",
+  "x": "Forward WAF classification labels to origin and responses with one rule."
+ },
+ {
+  "d": "2026-05-08",
+  "w": 19,
+  "t": "IAM Policy Autopilot adds Java support and Terraform-aware policy generation",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/iam-policy-autopilot/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "IAM Policy Autopilot now supports Java applications and Terraform-aware policy generation, expanding its language coverage and its ability to generate less permissive IAM policies from code."
+ },
+ {
+  "d": "2026-05-12",
+  "w": 20,
+  "t": "AWS Security Agent now supports full repository code reviews",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-security-agent-full-repository-code-review/",
+  "p": "posture",
+  "s": "AWS Security Agent",
+  "x": "Today, AWS announces the release of full repository code review, a new capability in AWS Security Agent that performs deep, context-aware security analysis of your entire codebase."
+ },
+ {
+  "d": "2026-05-13",
+  "w": 20,
+  "t": "Amazon CloudFront announces support for OCSP Revocation for Mutual TLS (Viewer)",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-cloudfront-ocsp-tls/",
+  "p": "network",
+  "s": "CloudFront",
+  "x": "Amazon CloudFront now supports Online Certificate Status Protocol (OCSP) revocation checking for viewer mTLS, enabling you to validate client certificate revocation status in real time during connection establishment."
+ },
+ {
+  "d": "2026-05-14",
+  "w": 20,
+  "t": "Amazon CloudFront announces Passthrough Mode for mutual TLS (Viewer)",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-cloudfront-mtls-passthrough/",
+  "p": "network",
+  "s": "CloudFront",
+  "x": "Amazon CloudFront now supports passthrough mode for viewer mutual TLS (mTLS) authentication, enabling customers to forward client certificates to their origin for validation without requiring CloudFront to perform…"
+ },
+ {
+  "d": "2026-05-15",
+  "w": 20,
+  "t": "AWS Organizations now supports higher quotas for service control policies (SCPs)",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-organizations-increased-scp-quotas/",
+  "p": "identity",
+  "s": "Organizations",
+  "x": "AWS Organizations now supports higher quotas for service control policies (SCPs)."
+ },
+ {
+  "d": "2026-05-18",
+  "w": 21,
+  "t": "Introducing pre-fetching and IAM role assumption for AWS Secrets Manager Agent",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/secrets-manager-agent-prefetch-and-role-assumption/",
+  "p": "data",
+  "s": "Secrets Manager",
+  "x": "Agent pre-fetches secrets at startup and can assume an IAM role."
+ },
+ {
+  "d": "2026-05-19",
+  "w": 21,
+  "t": "Amazon Inspector is now available in the AWS Asia Pacific (Taipei) Region",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-inspector-taipei/",
+  "p": "threat",
+  "s": "Inspector",
+  "x": "Inspector available in Asia Pacific (Taipei)."
+ },
+ {
+  "d": "2026-05-20",
+  "w": 21,
+  "t": "AWS Security Hub now uncovers identity risks from unused access",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-security-hub-unused-access/",
+  "p": "identity",
+  "s": "Security Hub",
+  "x": "Detects unused IAM permissions, roles and credentials across the organization."
+ },
+ {
+  "d": "2026-05-20",
+  "w": 21,
+  "t": "Security Hub Extended expands to 21 curated partner solutions across 9 categories",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-security-hub-extended/",
+  "p": "posture",
+  "s": "Security Hub",
+  "x": "Adds SentinelOne, CyberArk, Sublime, Varonis, LayerX, Native Security and Zenity."
+ },
+ {
+  "d": "2026-05-22",
+  "w": 21,
+  "t": "AWS Secrets Manager adds managed external secrets support for Datadog and Snowflake",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/secrets-manager-managed-external-secrets-datadog-snowflake/",
+  "p": "data",
+  "s": "Secrets Manager",
+  "x": "Automatic rotation of Datadog keys and Snowflake programmatic access tokens."
+ },
+ {
+  "d": "2026-05-22",
+  "w": 21,
+  "t": "AWS Security Agent adds verification scripts for pentest findings",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-security-agent/",
+  "p": "posture",
+  "s": "AWS Security Agent",
+  "x": "AWS Security Agent now generates verification scripts for penetration test findings, enabling security teams to independently reproduce and validate discovered vulnerabilities."
+ },
+ {
+  "d": "2026-05-26",
+  "w": 22,
+  "t": "Amazon GuardDuty Malware Protection for AWS Backup supports Amazon S3 continuous backups",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-guardduty-aws-backup-s3-continuous/",
+  "p": "threat",
+  "s": "GuardDuty",
+  "x": "Malware scans on S3 continuous backups to find clean points in time for safe recovery."
+ },
+ {
+  "d": "2026-05-27",
+  "w": 22,
+  "t": "AWS Backup adds OTP verification for Multi-party approval on logically air-gapped vaults",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-backup-otp-multi-party-approval-lag/",
+  "p": "data",
+  "s": "AWS Backup",
+  "x": "Approvers enter a one-time password to vote on air-gapped vault actions."
+ },
+ {
+  "d": "2026-05-28",
+  "w": 22,
+  "t": "AWS Organizations emits CloudTrail events for account membership changes",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-organizations-cloudtrail/",
+  "p": "posture",
+  "s": "Organizations",
+  "x": "AccountJoinedOrganization and AccountDepartedOrganization events in the management account."
+ },
+ {
+  "d": "2026-05-29",
+  "w": 22,
+  "t": "AWS Shield Advanced introduces DDoS attack flow logs",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-shield-ddos/",
+  "p": "network",
+  "s": "Shield",
+  "x": "Packet-level flow logs during attacks to S3, CloudWatch Logs or Firehose."
+ },
+ {
+  "d": "2026-05-31",
+  "w": 22,
+  "t": "Amazon Inspector launches improved agent-based scanning for EC2",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-inspector-ec2-agent-scanning-improvements",
+  "p": "threat",
+  "s": "Inspector",
+  "x": "New Inspector VM Scanner widens detection coverage and lowers CPU use on EC2."
+ },
+ {
+  "d": "2026-06-01",
+  "w": 23,
+  "t": "Amazon Bedrock AgentCore Identity now allows you to bring your own secrets with AWS Secrets Manager",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/agentcore-identity-secrets-manager/",
+  "p": "ai",
+  "s": "AgentCore",
+  "x": "Reference your own Secrets Manager ARNs in AgentCore Identity credential providers."
+ },
+ {
+  "d": "2026-06-01",
+  "w": 23,
+  "t": "Amazon SageMaker adds permissions boundaries for SCP compliance",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-sagemaker-scp/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "Amazon SageMaker Unified Studio now supports custom IAM permissions boundaries, so organizations that enforce Service Control Policies (SCPs) requiring permissions boundaries on all IAM roles can adopt SageMaker…"
+ },
+ {
+  "d": "2026-06-02",
+  "w": 23,
+  "t": "AWS Config now supports internal service linked rules",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-config-supports-internal-service-linked-rules",
+  "p": "posture",
+  "s": "Config",
+  "x": "AWS services such as Security Hub CSPM can deploy and manage Config rule evaluations."
+ },
+ {
+  "d": "2026-06-04",
+  "w": 23,
+  "t": "Amazon Cognito now supports multi-Region replication",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-cognito-multi-region/",
+  "p": "identity",
+  "s": "Cognito",
+  "x": "Amazon Cognito now supports multi-Region replication, enabling you to synchronize user and machine identity data — including credentials, user pool configurations, and federation setups — to a secondary user pool in…"
+ },
+ {
+  "d": "2026-06-11",
+  "w": 24,
+  "t": "AWS Lake Formation extends table permissions to access underlying data in Amazon S3",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-lake-formation-access-data-amazon-s3",
+  "p": "data",
+  "s": "Lake Formation",
+  "x": "One permission set for SQL queries and direct S3 file access."
+ },
+ {
+  "d": "2026-06-11",
+  "w": 24,
+  "t": "AWS announces AWS Workload Credentials Provider",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-workload-credentials-provider/",
+  "p": "data",
+  "s": "Secrets Manager",
+  "x": "Client-side provider deploys ACM exported certificates and caches secrets on any workload."
+ },
+ {
+  "d": "2026-06-15",
+  "w": 25,
+  "t": "AWS Management Console Private Access now works without internet connectivity",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-management-console-private/",
+  "p": "network",
+  "s": "PrivateLink",
+  "x": "AWS Management Console Private Access now enables customers to access the AWS Console from VPCs without internet connectivity, allowing enterprises to manage their AWS infrastructure through the console while…"
+ },
+ {
+  "d": "2026-06-15",
+  "w": 25,
+  "t": "AWS WAF announces AI traffic monetization",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-waf-ai-traffic-monetization/",
+  "p": "network",
+  "s": "WAF",
+  "x": "Bot Control lets you price, meter and charge AI bots and agents."
+ },
+ {
+  "d": "2026-06-15",
+  "w": 25,
+  "t": "Amazon Route 53 Resolver DNS Firewall now supports Palo Alto Networks Advanced DNS Security (Preview)",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-route-53-resolver-dns/",
+  "p": "network",
+  "s": "Route 53",
+  "x": "Preview of PANW Advanced DNS Security on DNS Firewall rules, no separate firewalls."
+ },
+ {
+  "d": "2026-06-16",
+  "w": 25,
+  "t": "AWS Sign-in now supports resource-based policies and resource control policies",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-sign-in/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "AWS Sign-in now supports resource-based policies and resource control policies (RCPs) for the AWS Management Console."
+ },
+ {
+  "d": "2026-06-16",
+  "w": 25,
+  "t": "Amazon Bedrock Guardrails announces a new API targeting agentic AI workflows",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-guardrails-api-ai/",
+  "p": "ai",
+  "s": "Bedrock Guardrails",
+  "x": "Amazon Bedrock Guardrails now offers the InvokeGuardrailChecks API, a new resourceless API that lets you apply individual safeguards at any point in your agentic AI applications without creating guardrail resources."
+ },
+ {
+  "d": "2026-06-17",
+  "w": 25,
+  "t": "AWS Secrets Manager introduces safe secrets handling in the Agent Toolkit for AWS",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/safe-secrets-handling-in-agent-toolkit-for-aws/",
+  "p": "ai",
+  "s": "Secrets Manager",
+  "x": "Secret safety skill lets AI coding agents use secrets without exposing them."
+ },
+ {
+  "d": "2026-06-17",
+  "w": 25,
+  "t": "AWS Security Agent adds Kiro Power, Claude Code, simulated validations and new integrations support",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-kiro-power-claude-code/",
+  "p": "posture",
+  "s": "AWS Security Agent",
+  "x": "AWS Security Agent (now part of AWS Continuum) adds support for Kiro and Claude Code, enabling developers to trigger security scans directly from their development environment."
+ },
+ {
+  "d": "2026-06-17",
+  "w": 25,
+  "t": "AWS Security Agent announces support for Threat Modeling",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-security-agent-threat-modeling/",
+  "p": "posture",
+  "s": "AWS Security Agent",
+  "x": "AWS Security Agent (now part of AWS Continuum) now includes threat modeling, an AI-powered agentic capability that automatically generates threat models for your applications."
+ },
+ {
+  "d": "2026-06-17",
+  "w": 25,
+  "t": "Amazon Bedrock AgentCore now supports Bedrock Guardrails in policy",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-policy-guardrails-generally-available",
+  "p": "ai",
+  "s": "AgentCore",
+  "x": "Today, AWS announces that Amazon Bedrock AgentCore now supports Bedrock Guardrails in policy, giving enterprises deeper safety and security controls as they scale AI agents in production."
+ },
+ {
+  "d": "2026-06-17",
+  "w": 25,
+  "t": "Introducing AWS Continuum for security at machine speed",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-continuum/",
+  "p": "posture",
+  "s": "AWS Continuum",
+  "x": "Discovers, prioritizes, validates and remediates security risks at machine speed within guardrails you define."
+ },
+ {
+  "d": "2026-06-22",
+  "w": 26,
+  "t": "AWS IAM Identity Center now supports separate quotas for AWS accounts and applications",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-identity-center-separate-quotas/",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "Up to 7,000 accounts and 7,000 applications, configured independently."
+ },
+ {
+  "d": "2026-06-22",
+  "w": 26,
+  "t": "AWS Network Firewall updates default drop action for improved connection reliability",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-network-firewall-updates-default-drop-action",
+  "p": "network",
+  "s": "Network Firewall",
+  "x": "New default: application drop established (server-directed only)."
+ },
+ {
+  "d": "2026-06-23",
+  "w": 26,
+  "t": "Amazon Cognito now supports customer managed key for encryption at rest",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-cognito-customer-managed-key",
+  "p": "identity",
+  "s": "Cognito",
+  "x": "User pool data encrypted at rest with customer managed KMS keys."
+ },
+ {
+  "d": "2026-06-23",
+  "w": 26,
+  "t": "Amazon GuardDuty AI-powered investigations accelerate threat response (Preview)",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-guardduty/",
+  "p": "threat",
+  "s": "GuardDuty",
+  "x": "Preview: AI analyzes findings and accounts to separate true threats from benign findings."
+ },
+ {
+  "d": "2026-06-23",
+  "w": 26,
+  "t": "Automated Reasoning checks in Amazon Bedrock Guardrails add new policy refinement workflows",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-guardrails/",
+  "p": "ai",
+  "s": "Bedrock Guardrails",
+  "x": "Today, AWS announces new automated refinement workflows for Automated Reasoning checks in Amazon Bedrock Guardrails."
+ },
+ {
+  "d": "2026-06-24",
+  "w": 26,
+  "t": "Amazon EC2 announces AMI Watermarks for improved AMI governance",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/ec2-image-watermarks-allowed-images",
+  "p": "posture",
+  "s": "EC2",
+  "x": "Amazon EC2 introduces AMI watermarks, letting you embed custom identifiers in your private AMIs."
+ },
+ {
+  "d": "2026-06-25",
+  "w": 26,
+  "t": "AWS Network Firewall now supports managed threat intelligence rules from VisionHeight",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/network-firewall-visionheight-managed-rules",
+  "p": "network",
+  "s": "Network Firewall",
+  "x": "Zero-Day Threat Protection and Noisy Scanners/Tor rule groups."
+ },
+ {
+  "d": "2026-06-29",
+  "w": 27,
+  "t": "AWS WAF adds support for Amazon Bedrock AgentCore Gateway",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-waf-amazon-bedrock-agentcore/",
+  "p": "ai",
+  "s": "WAF",
+  "x": "WAF protection for agentic workloads behind AgentCore Gateway."
+ },
+ {
+  "d": "2026-06-29",
+  "w": 27,
+  "t": "Amazon S3 server access logs now deliver to Amazon CloudWatch Logs and Amazon S3 Tables",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-s3-cloudwatch-logs-tables/",
+  "p": "posture",
+  "s": "S3",
+  "x": "S3 access logs to CloudWatch Logs with KMS encryption, cross-account aggregation and Iceberg mirror."
+ },
+ {
+  "d": "2026-06-30",
+  "w": 27,
+  "t": "AWS Network Firewall now supports container attribute-based inspection for Amazon EKS and Amazon ECS",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-network-firewall-container-attributes-referencing",
+  "p": "network",
+  "s": "Network Firewall",
+  "x": "Today, AWS announces container attribute-based rules for AWS Network Firewall, a capability that simplifies how you secure containerized workloads, including generative AI applications, running on Amazon Elastic…"
+ },
+ {
+  "d": "2026-06-30",
+  "w": 27,
+  "t": "AWS Security Hub CSPM launches AI Security Best Practices standard with 31 automated controls",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-security-hub-cspm-ai-security/",
+  "p": "ai",
+  "s": "Security Hub",
+  "x": "31 automated controls for Bedrock, AgentCore and other AI resources."
+ },
+ {
+  "d": "2026-06-30",
+  "w": 27,
+  "t": "AWS Security Hub extends unified security management to Microsoft Azure",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-security-hub-supports-monitoring-microsoft-azure/",
+  "p": "posture",
+  "s": "Security Hub",
+  "x": "CSPM, vulnerability and response management across AWS and Azure."
+ },
+ {
+  "d": "2026-06-30",
+  "w": 27,
+  "t": "IAM Identity Center now enables programmatic AWS account access for customer managed applications",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-iam-identity-center-account-access-customer-managed-apps/",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "Customer managed apps discover assigned accounts/roles and get temporary credentials for users."
+ },
+ {
+  "d": "2026-07-01",
+  "w": 27,
+  "t": "AWS Artifact now includes Assurance Assistant for compliance inquiries",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-artifact-assurance-assistant/",
+  "p": "posture",
+  "s": "AWS Artifact",
+  "x": "AWS Artifact now includes Assurance Assistant, an AI-powered capability that generates citation-backed responses to security and compliance questions about AWS services."
+ },
+ {
+  "d": "2026-07-01",
+  "w": 27,
+  "t": "AWS Security Agent now available in Asia Pacific (Mumbai), Asia Pacific (Singapore), and South America (São Paulo)",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-security-agent-asia-pacific/",
+  "p": "posture",
+  "s": "AWS Security Agent",
+  "x": "Starting today, AWS Security Agent (now part of AWS Continuum) is available in three additional AWS Regions: Asia Pacific (Mumbai), Asia Pacific (Singapore), and South America (São Paulo)."
+ },
+ {
+  "d": "2026-07-01",
+  "w": 27,
+  "t": "Amazon GuardDuty adds sensitive file modification threat detections",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-guardduty-sfm/",
+  "p": "threat",
+  "s": "GuardDuty",
+  "x": "Amazon GuardDuty Runtime Monitoring now includes three new threat detections that alert security teams when sensitive files are modified on Amazon EC2 instances and container workloads running on Amazon EKS or Amazon…"
+ },
+ {
+  "d": "2026-07-02",
+  "w": 27,
+  "t": "Amazon EC2 Dedicated Hosts now support AMD SEV-SNP",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/ec2-amd-sev-snp-dedicated-hosts",
+  "p": "data",
+  "s": "EC2",
+  "x": "Amazon EC2 is announcing support for AMD Secure Encrypted Virtualization-Secure Nested Paging (SEV-SNP) on Dedicated Hosts, enabling customers to run their confidential computing workloads on physical servers fully…"
+ },
+ {
+  "d": "2026-07-06",
+  "w": 28,
+  "t": "AWS Certificate Manager now supports the ACME protocol for public certificates",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-certificate-manager-acme/",
+  "p": "data",
+  "s": "Certificate Manager",
+  "x": "AWS Certificate Manager (ACM) now allows you to provision a fully managed ACME server endpoint that issues public TLS certificates with a 45 day validity from Amazon Trust Services using any ACMEv2-compatible client,…"
+ },
+ {
+  "d": "2026-07-06",
+  "w": 28,
+  "t": "AWS Secrets Manager adds managed external secrets support for Paddle and GitLab",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/secrets-manager-managed-external-secrets-paddle-gitlab/",
+  "p": "data",
+  "s": "Secrets Manager",
+  "x": "AWS Secrets Manager now extends its managed external secrets capability to include Paddle API Keys and GitLab Access Tokens."
+ },
+ {
+  "d": "2026-07-06",
+  "w": 28,
+  "t": "AWS Security Hub adds impact analysis for exposure findings",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/impact-analysis-aws-security-hub/",
+  "p": "posture",
+  "s": "Security Hub",
+  "x": "Maps downstream resources an attacker could reach if an exposure is exploited."
+ },
+ {
+  "d": "2026-07-06",
+  "w": 28,
+  "t": "AWS introduces declarative controls for VPC Encryption Controls",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/vpc-encryption-controls-declarative-controls/",
+  "p": "network",
+  "s": "VPC",
+  "x": "You can now use declarative policies to turn on VPC Encryption Controls in monitor or enforce mode across all VPCs in your environment."
+ },
+ {
+  "d": "2026-07-06",
+  "w": 28,
+  "t": "Amazon Cognito now supports self-service provisioned API rate limits",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/cognito-provisioned-limits",
+  "p": "identity",
+  "s": "Cognito",
+  "x": "Amazon Cognito now allows you to increase or decrease your provisioned API rate limits on demand."
+ },
+ {
+  "d": "2026-07-08",
+  "w": 28,
+  "t": "AWS Security Hub now offers Network Scanning to identify publicly reachable resources",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-security-hub-network-scanning/",
+  "p": "posture",
+  "s": "Security Hub",
+  "x": "Probes resources from the internet to confirm actual public reachability."
+ },
+ {
+  "d": "2026-07-09",
+  "w": 28,
+  "t": "AWS Config now supports 191 additional managed rules",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-config-additional-managed-rules",
+  "p": "posture",
+  "s": "Config",
+  "x": "191 new managed rules covering Bedrock, SageMaker, ECS, EKS, RDS, Redshift, S3 and CloudTrail."
+ },
+ {
+  "d": "2026-07-09",
+  "w": 28,
+  "t": "OAuth support for the AWS MCP Server",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/oauth-aws-mcp-server/",
+  "p": "ai",
+  "s": "IAM",
+  "x": "AI agents connect to the AWS MCP Server via AWS Sign-In OAuth with existing IAM controls."
+ },
+ {
+  "d": "2026-07-10",
+  "w": 28,
+  "t": "AWS Organizations now applies account departure security controls by default for new organizations created via AWS Organizations console",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-organizations-security-controls-new-orgs-console",
+  "p": "identity",
+  "s": "Organizations",
+  "x": "AWS Organizations now automatically applies security controls by default when you create a new organization via AWS Organizations console, simplifying initial security configuration by automatically applying core…"
+ },
+ {
+  "d": "2026-07-13",
+  "w": 29,
+  "t": "OpenAI privacy-filter for PII detection and masking is now available in Amazon SageMaker JumpStart",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/privacy-filter-on-sagemaker-jumpstart/",
+  "p": "ai",
+  "s": "SageMaker",
+  "x": "Today, AWS announced the availability of privacy-filter in Amazon SageMaker JumpStart, expanding the portfolio of foundation models available to AWS customers."
+ },
+ {
+  "d": "2026-07-14",
+  "w": 29,
+  "t": "AWS IAM Identity Center achieves FedRAMP Class C Certification",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-identity-center-fedramp/",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "In scope for FedRAMP Class C in four US Regions."
+ },
+ {
+  "d": "2026-07-14",
+  "w": 29,
+  "t": "AWS Security Hub now provides AI inventory for organization-wide visibility of AI assets",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-security-hub-ai/",
+  "p": "ai",
+  "s": "Security Hub",
+  "x": "Continuously updated org-wide inventory of AI agents, models and pipelines with their security posture."
+ },
+ {
+  "d": "2026-07-14",
+  "w": 29,
+  "t": "Introducing Amazon GuardDuty AI Protection for AWS AI workloads",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-guardduty-ai-protection-aws/",
+  "p": "ai",
+  "s": "GuardDuty",
+  "x": "Threat detection for Bedrock and SageMaker: anomalous model invocations, cost harvesting, prompt injection attempts."
+ },
+ {
+  "d": "2026-07-15",
+  "w": 29,
+  "t": "Amazon Cognito now supports importing users with password hashes",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-cognito-password-hash-import/",
+  "p": "identity",
+  "s": "Cognito",
+  "x": "Amazon Cognito now supports importing users with password hashes in CSV user imports."
+ },
+ {
+  "d": "2026-07-16",
+  "w": 29,
+  "t": "AWS Backup extends logically air-gapped vault support to six additional AWS Regions",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-backup-logically-air-gapped-vault-regions/",
+  "p": "data",
+  "s": "AWS Backup",
+  "x": "AWS Backup logically air-gapped vaults are now available in six additional AWS Regions: Asia Pacific (Taipei), Asia Pacific (Malaysia), Asia Pacific (New Zealand), Asia Pacific (Thailand), Mexico (Central), and…"
+ },
+ {
+  "d": "2026-07-16",
+  "w": 29,
+  "t": "AWS Control Tower Account Factory for Terraform now re-applies customizations when accounts move between OUs",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-control-tower-account/",
+  "p": "posture",
+  "s": "Control Tower",
+  "x": "AWS Control Tower Account Factory for Terraform (AFT) can now automatically re-apply an account's customizations when that account moves to a different Organizational Unit (OU)."
+ },
+ {
+  "d": "2026-07-16",
+  "w": 29,
+  "t": "Amazon CloudWatch Synthetics now supports customer managed encryption keys",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/synthetics-customer-managed-keys/",
+  "p": "data",
+  "s": "KMS",
+  "x": "Canary environment variables encrypted with customer managed keys."
+ },
+ {
+  "d": "2026-07-20",
+  "w": 30,
+  "t": "Selectively log network activity events by identity in AWS CloudTrail",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-cloudtrail-filter-useridentity-advance-selectors/",
+  "p": "posture",
+  "s": "CloudTrail",
+  "x": "Filter VPC endpoint network activity events by IAM identity."
+ },
+ {
+  "d": "2026-07-22",
+  "w": 30,
+  "t": "AWS Lambda durable functions now supports customer managed key encryption",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/durablefunctions-cmk/",
+  "p": "data",
+  "s": "KMS",
+  "x": "Durable execution state encrypted with a customer managed KMS key."
+ },
+ {
+  "d": "2026-07-22",
+  "w": 30,
+  "t": "AWS Organizations increases RCP quota to 2,000 per organization",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-organizations-resource-control-policy-limit-increase-2000",
+  "p": "identity",
+  "s": "Organizations",
+  "x": "AWS Organizations now supports up to 2,000 resource control policies (RCPs) per organization, doubling the previous limit of 1,000."
+ },
+ {
+  "d": "2026-07-22",
+  "w": 30,
+  "t": "AWS Secrets Manager now publishes secret update notifications to Amazon EventBridge",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/secrets-manager-update-notifications",
+  "p": "data",
+  "s": "Secrets Manager",
+  "x": "Native EventBridge events on every secret value change."
+ },
+ {
+  "d": "2026-07-27",
+  "w": 31,
+  "t": "AWS Security Hub MCP App brings exposure findings into your AI-assisted workflow (Preview)",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-security-hub-mcp-app/",
+  "p": "posture",
+  "s": "Security Hub",
+  "x": "Preview: local MCP server bringing exposure findings into AI assistants."
+ },
+ {
+  "d": "2026-07-27",
+  "w": 31,
+  "t": "Amazon EKS now supports AWS PrivateLink for the cluster OIDC endpoint",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-eks-oidc-endpoint-privatelink",
+  "p": "network",
+  "s": "PrivateLink",
+  "x": "Amazon Elastic Kubernetes Service (Amazon EKS) now supports AWS PrivateLink for the cluster OIDC discovery and JWKS endpoint."
+ },
+ {
+  "d": "2026-07-29",
+  "w": 31,
+  "t": "AWS IAM Identity Center extends multi-Region support to Identity Center directory",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-iam-identity-center-extends-multi-region-support-to-identity-center-directory",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "Multi-Region replication now works with Identity Center directory as identity source."
+ },
+ {
+  "d": "2026-07-29",
+  "w": 31,
+  "t": "AWS WAF adds pre-parse text transformations and new text transformations",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-waf/",
+  "p": "network",
+  "s": "WAF",
+  "x": "Pre-parse query normalization plus ten new text transformations."
+ },
+ {
+  "d": "2026-07-30",
+  "w": 31,
+  "t": "AWS announces general availability of Policy-Based Routing on AWS Transit Gateway",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-transit-gateway-policy-based-routing/",
+  "p": "network",
+  "s": "Transit Gateway",
+  "x": "Forward traffic by source/destination IP, port and protocol, e.g. to inspection."
+ },
+ {
+  "d": "2026-07-30",
+  "w": 31,
+  "t": "IAM Policy Simulator moves to the IAM console and adds additional capabilities",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/iam-policy-simulator-iam-console/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "AWS Identity and Access Management (IAM) announces a major update to IAM Policy Simulator, the tool you use to test and validate the permissions your IAM policies grant before you deploy them."
+ },
+ {
+  "d": "2026-08-03",
+  "w": 32,
+  "t": "AWS WAF now supports Miggo Security managed rule groups for emerging threats and AI/ML application protection",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-waf-miggo-managed-rule-groups",
+  "p": "network",
+  "s": "WAF",
+  "x": "Two Miggo rule groups: emerging application threats and AI/ML app protection."
+ },
+ {
+  "d": "2026-08-04",
+  "w": 32,
+  "t": "AWS Application and Network Load Balancers now support RFC 9151 compliant security policies",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-application-network/",
+  "p": "network",
+  "s": "Elastic Load Balancing",
+  "x": "AWS Application Load Balancer (ALB) and Network Load Balancer (NLB) now support new TLS-based security policies that comply with RFC 9151 TLS server requirements for Commercial National Security Algorithm (CNSA) 1.0…"
+ },
+ {
+  "d": "2026-08-04",
+  "w": 32,
+  "t": "AWS Security Hub Extended adds supply chain security as its 10th category",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-security-hub-extended-adds-supply-chain-security",
+  "p": "posture",
+  "s": "Security Hub",
+  "x": "Supply Chain Security category added with Chainguard and Socket as curated partners."
+ },
+ {
+  "d": "2026-08-04",
+  "w": 32,
+  "t": "Re-introducing Forward Proxy as AWS Network Firewall Functionality (Preview)",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-network-firewall-forward-proxy-preview/",
+  "p": "network",
+  "s": "Network Firewall",
+  "x": "Preview: use Network Firewall as an explicit forward proxy against exfiltration."
+ },
+ {
+  "d": "2026-08-05",
+  "w": 32,
+  "t": "AWS IAM Identity Center makes management of AWS account access optional for new organization instances",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-identity-center-accounts-optional/",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "Use Identity Center for application access only, without account access management."
+ },
+ {
+  "d": "2026-08-06",
+  "w": 32,
+  "t": "AWS Security Agent now supports email-based MFA for penetration testing",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-security-agent-mfa/",
+  "p": "posture",
+  "s": "AWS Security Agent",
+  "x": "AWS Security Agent (now part of AWS Continuum) now enables penetration testing of applications that use email-based multi-factor authentication (MFA) as part of their login flow."
+ },
+ {
+  "d": "2026-08-06",
+  "w": 32,
+  "t": "AWS WAF now supports a Salt Security managed rule group for API and MCP threat detection",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-waf-salt-security-managed-rules/",
+  "p": "network",
+  "s": "WAF",
+  "x": "Marketplace rule group for API attacks and AI agent / MCP traffic."
+ },
+ {
+  "d": "2026-08-07",
+  "w": 32,
+  "t": "AWS IAM Identity Center supports one-click multi-Region option for new organization instances",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-iam-identity-center-supports-one-click-multi-region-option-new-organization-instances",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "Multi-Region enabled at instance creation, no manual KMS key setup."
+ },
+ {
+  "d": "2026-08-10",
+  "w": 33,
+  "t": "AWS IAM streamlines assignment of IAM roles to workforce users with account access manager",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-iam-aam/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "Assign IAM roles in AWS accounts to IAM Identity Center users and groups."
+ },
+ {
+  "d": "2026-08-11",
+  "w": 33,
+  "t": "AWS Secrets Manager adds managed external secrets support for Jenkins and SonarQube",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/secrets-manager-integration-jenkins-sonarqube/",
+  "p": "data",
+  "s": "Secrets Manager",
+  "x": "Automatic rotation of Jenkins API tokens and SonarQube tokens."
+ },
+ {
+  "d": "2026-08-12",
+  "w": 33,
+  "t": "AWS IAM now provides role manager to set up IAM roles automatically",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-iam-role-manager",
+  "p": "identity",
+  "s": "IAM",
+  "x": "GA of role manager: creates or reuses the default IAM roles services need during console setup."
+ },
+ {
+  "d": "2026-08-12",
+  "w": 33,
+  "t": "Amazon Quick adds deny by default for custom permissions",
+  "u": "https://aws.amazon.com/whats-new/2026/08/amazon-quick-deny-by-default-permissions/",
+  "p": "identity",
+  "s": "Amazon Quick",
+  "x": "Amazon Quick custom permissions now include deny by default, a governance setting that automatically restricts new AI capabilities before they reach users."
+ },
+ {
+  "d": "2026-08-13",
+  "w": 33,
+  "t": "AWS Certificate Manager supports switching from e-mail to DNS validation",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/AWS-Certificate-Manager-Email-DNS-Switch",
+  "p": "data",
+  "s": "Certificate Manager",
+  "x": "Change validation to DNS without reissuing the certificate or changing its ARN."
+ },
+ {
+  "d": "2026-08-13",
+  "w": 33,
+  "t": "Amazon S3 adds additional policy details to access denied error messages",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/s3-additional-policy-details-access-denied-error-messages/",
+  "p": "identity",
+  "s": "S3",
+  "x": "Amazon S3 now includes the specific AWS Identity and Access Management (IAM) and AWS Organizations policy Amazon Resource Name (ARN) in HTTP 403 Access Denied error messages for same-account and same-organization…"
+ },
+ {
+  "d": "2026-08-17",
+  "w": 34,
+  "t": "AWS Network Firewall Now Supports Stateful Rule Hit Counts",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-network-firewall-stateful-rule-hit-counts/",
+  "p": "network",
+  "s": "Network Firewall",
+  "x": "Hit counts per stateful rule to tune policies."
+ },
+ {
+  "d": "2026-08-18",
+  "w": 34,
+  "t": "AWS IAM identity federation to external services is now available in AWS European Sovereign Cloud Region",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-iam-european-sovereign-cloud/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "Workloads authenticate to external services with short-lived JWTs."
+ },
+ {
+  "d": "2026-08-18",
+  "w": 34,
+  "t": "IAM Policy Autopilot now supports Terraform plan files",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/iam-policy-autopilot-now-supports-terraform-plan-files",
+  "p": "identity",
+  "s": "IAM",
+  "x": "IAM Policy Autopilot can now generate baseline IAM policies directly from a Terraform plan file."
+ },
+ {
+  "d": "2026-08-19",
+  "w": 34,
+  "t": "AWS IAM now supports 20 managed policies per role by default",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-iam-quota-increase/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "AWS Identity and Access Management (IAM) has increased the default quota for managed policies per role from 10 to 20."
+ },
+ {
+  "d": "2026-08-19",
+  "w": 34,
+  "t": "AWS Security Agent (now part of AWS Continuum) now supports budget controls and finding revalidation",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-security-agent/",
+  "p": "posture",
+  "s": "AWS Continuum",
+  "x": "AWS Security Agent (now part of AWS Continuum) has a on-demand penetration testing service that uses an AI agent to autonomously test web applications for vulnerabilities, billing based on cumulative task hours…"
+ },
+ {
+  "d": "2026-08-19",
+  "w": 34,
+  "t": "Amazon DynamoDB Streams now supports attribute-based access control",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-dynamodb-streams-abac/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "Amazon DynamoDB Streams now supports attribute-based access control (ABAC), enabling you to use tag-based conditions in your Identity and Access Management (IAM) policies to control access to your data streams."
+ },
+ {
+  "d": "2026-08-19",
+  "w": 34,
+  "t": "Amazon SageMaker notebooks now support trusted identity propagation",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-sagemaker/",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "Per-user access control through Lake Formation for Athena, Redshift and EMR Serverless."
+ },
+ {
+  "d": "2026-08-20",
+  "w": 34,
+  "t": "Amazon CloudFront now supports Origin Access Control (OAC) for Amazon S3 Multi-Region Access Points",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-cloudfront-oac-s3-mrap",
+  "p": "network",
+  "s": "CloudFront",
+  "x": "Starting today, customers can protect their origins using Amazon S3 Multi-Region Access Points (MRAP) by using CloudFront Origin Access Control (OAC) to only allow access from designated CloudFront distributions."
+ },
+ {
+  "d": "2026-08-20",
+  "w": 34,
+  "t": "Amazon EKS now supports certificate authority (CA) rotation with automated lifecycle management",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-eks-certificate-authority-ca-rotation-automated-lifecycle-management",
+  "p": "data",
+  "s": "EKS",
+  "x": "Today, Amazon Elastic Kubernetes Service (Amazon EKS) announced certificate authority (CA) rotation, enabling customers to rotate their cluster's CA through a managed lifecycle with automated safeguards."
+ },
+ {
+  "d": "2026-08-20",
+  "w": 34,
+  "t": "Amazon Timestream for InfluxDB now supports customer managed keys",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-timestream-influxdb-cmk/",
+  "p": "data",
+  "s": "KMS",
+  "x": "Customer managed keys for InfluxDB 2 instances, read replicas and InfluxDB 3 clusters."
+ },
+ {
+  "d": "2026-08-24",
+  "w": 35,
+  "t": "Amazon EKS now supports multiple external OIDC identity providers per cluster",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-eks-multiple-oidc-providers",
+  "p": "identity",
+  "s": "EKS",
+  "x": "Amazon Elastic Kubernetes Service (Amazon EKS) now supports multiple external OpenID Connect (OIDC) identity providers per cluster."
+ },
+ {
+  "d": "2026-08-24",
+  "w": 35,
+  "t": "SageMaker MLflow now supports customer managed keys",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/sagemaker-mlflow-custom-keys",
+  "p": "data",
+  "s": "KMS",
+  "x": "MLflow data encrypted with customer managed KMS keys."
+ },
+ {
+  "d": "2026-08-25",
+  "w": 35,
+  "t": "AWS Lambda functions now support full IAM resource-based policies",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-lambda-full-iam-resource-based-policies/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "AWS Lambda functions now support full Identity and Access Management (IAM) resource-based policies, enabling platform admins and security teams to define granular access permissions using the full capabilities of AWS…"
+ },
+ {
+  "d": "2026-08-25",
+  "w": 35,
+  "t": "AWS Secrets Manager adds managed external secrets support for Cisco Security Platform and Netskope",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/secrets-manager-cisco-netskope/",
+  "p": "data",
+  "s": "Secrets Manager",
+  "x": "Automatic rotation of Cisco and Netskope credentials without custom code."
+ },
+ {
+  "d": "2026-08-25",
+  "w": 35,
+  "t": "Amazon GameLift Servers enhanced DDoS Protection now available",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-gamelift-servers-enhanced-ddos-protection",
+  "p": "network",
+  "s": "Shield",
+  "x": "Network and transport layer DDoS protection for game servers, no configuration."
+ },
+ {
+  "d": "2026-08-25",
+  "w": 35,
+  "t": "IAM Roles Anywhere now provides a Java plugin for the AWS SDK",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/iam-roles-anywhere-java/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "AWS Identity and Access Management (IAM) Roles Anywhere now provides a plugin for the AWS SDK for Java v2 that enables workloads running outside of AWS to obtain temporary AWS credentials directly within the Java…"
+ },
+ {
+  "d": "2026-08-26",
+  "w": 35,
+  "t": "AWS Backup adds cross-Region backup copy and logically air-gapped vault support for Amazon DocumentDB in nine additional AWS Regions",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-backup-cross-region-air-gapped-docdb/",
+  "p": "data",
+  "s": "AWS Backup",
+  "x": "AWS Backup now supports copying Amazon DocumentDB backups across AWS Regions and storing them in logically air-gapped vaults in nine additional AWS Regions: Asia Pacific (Hong Kong, Jakarta, Melbourne, Osaka), Europe…"
+ },
+ {
+  "d": "2026-08-26",
+  "w": 35,
+  "t": "Amazon Cognito adds admin API operation to reset user TOTP configurations",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-cognito-totp-reset/",
+  "p": "identity",
+  "s": "Cognito",
+  "x": "Amazon Cognito now provides a new admin API operation to reset a user's time-based one-time Password (TOTP) multi-factor authentication (MFA) configuration."
+ },
+ {
+  "d": "2026-08-28",
+  "w": 35,
+  "t": "Amazon Bedrock AgentCore Memory now supports fine-grained access control",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/agentcorememory-fine-grained-access-control",
+  "p": "ai",
+  "s": "AgentCore",
+  "x": "Amazon Bedrock AgentCore Memory now supports fine-grained access control (FGAC), enabling you to enforce per-user and per-tenant memory isolation through AgentCore Gateway without building custom authorization logic."
+ },
+ {
+  "d": "2026-08-31",
+  "w": 36,
+  "t": "AWS Agent Registry for centralized agent discovery and governance is now generally available",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-agent-registry-generally-available",
+  "p": "ai",
+  "s": "AgentCore",
+  "x": "GA of a governed catalog of agents, tools, skills and MCP servers."
+ },
+ {
+  "d": "2026-08-31",
+  "w": 36,
+  "t": "AWS Workload Credentials Provider is now available as a one-click install for Linux and Windows",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/workload-credentials-provider-install/",
+  "p": "data",
+  "s": "Secrets Manager",
+  "x": "Single-command install of AWCP for local secret caching."
+ },
+ {
+  "d": "2026-08-31",
+  "w": 36,
+  "t": "Amazon Cognito now supports machine-to-machine authorization without a user pool domain",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-cognito-get-client-token/",
+  "p": "identity",
+  "s": "Cognito",
+  "x": "Amazon Cognito now supports the GetClientToken API operation, enabling app clients to obtain access tokens for machine-to-machine (M2M) authorization directly through the AWS SDK, CLI, or API — without configuring a…"
+ },
+ {
+  "d": "2026-08-31",
+  "w": 36,
+  "t": "Amazon Redshift now supports AWS IAM Identity Center authentication with enhanced VPC routing",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-redshift-supports-idc-evr",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "SSO to Redshift with enhanced VPC routing; traffic stays on the AWS network."
+ },
+ {
+  "d": "2026-08-31",
+  "w": 36,
+  "t": "Automated Security Response on AWS adds AI Toolkit for custom remediations",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/08/automated-security-response-adds-AI-toolkit/",
+  "p": "posture",
+  "s": "Security Hub",
+  "x": "ASR adds an AI Toolkit for custom remediations and auto-remediation of Inspector, GuardDuty and Macie findings."
+ },
+ {
+  "d": "2026-09-01",
+  "w": 36,
+  "t": "Amazon Bedrock AgentCore Identity now offers a managed consent portal",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-bedrock-agentcore/",
+  "p": "ai",
+  "s": "AgentCore",
+  "x": "Amazon Bedrock AgentCore Identity now offers a managed consent portal that eliminates the need for custom OAuth callback infrastructure when connecting agents to third-party tools and services."
+ },
+ {
+  "d": "2026-09-02",
+  "w": 36,
+  "t": "AWS Config now supports 60 new resource types",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-config-new-resource-types/",
+  "p": "posture",
+  "s": "Config",
+  "x": "60 new resource types including Bedrock, EC2, SageMaker and Organizations."
+ },
+ {
+  "d": "2026-09-03",
+  "w": 36,
+  "t": "Amazon S3 now supports PrivateLink for FIPS endpoints",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-s3-privatelink-fips-endpoints",
+  "p": "network",
+  "s": "PrivateLink",
+  "x": "Amazon S3 now supports AWS PrivateLink for endpoints that have been validated under the Federal Information Processing Standard (FIPS) 140-3 program."
+ },
+ {
+  "d": "2026-09-03",
+  "w": 36,
+  "t": "Amazon SES now supports S/MIME email signing",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ses-supports-smime-signing",
+  "p": "data",
+  "s": "SES",
+  "x": "S/MIME signatures let recipients verify sender and message integrity."
+ },
+ {
+  "d": "2026-09-04",
+  "w": 36,
+  "t": "AWS Transfer Family SFTP Connectors now support continuing file transfers during credential rotation",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/transfer-family-sftp-credential-rotation/",
+  "p": "data",
+  "s": "Secrets Manager",
+  "x": "Transfers keep running while Secrets Manager rotates SFTP credentials."
+ },
+ {
+  "d": "2026-09-04",
+  "w": 36,
+  "t": "Amazon GuardDuty adds optional threat detection rules",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/guardduty-optional-detection-rules/",
+  "p": "threat",
+  "s": "GuardDuty",
+  "x": "Library of 35 opt-in Custom Detection Rules for CloudTrail management events, 26 finding types mapped to 10 MITRE ATT&CK tactics."
+ },
+ {
+  "d": "2026-09-08",
+  "w": 37,
+  "t": "Amazon API Gateway now supports mutual TLS for backend integrations",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-api-gateway-mutual-tls-backend/",
+  "p": "network",
+  "s": "API Gateway",
+  "x": "REST APIs present an ACM certificate to backends for mTLS."
+ },
+ {
+  "d": "2026-09-08",
+  "w": 37,
+  "t": "Amazon S3 Object Lock now supports variable retention with event holds",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-s3-object-lock-variable-retention/",
+  "p": "data",
+  "s": "S3",
+  "x": "WORM retention that starts at a future event such as a contract closing."
+ },
+ {
+  "d": "2026-09-09",
+  "w": 37,
+  "t": "AWS Private CA EKS add-on and Connector for AD now available in AWS GovCloud (US)",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/private-ca-eks-addon-ad-govcloud/",
+  "p": "data",
+  "s": "Private CA",
+  "x": "Kubernetes and Active Directory certificate connectors in GovCloud."
+ },
+ {
+  "d": "2026-09-09",
+  "w": 37,
+  "t": "Amazon Bedrock Managed Knowledge Base adds APIs and console support for debugging document-level access control",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-bedrock-knowledge-base-debugging-document-access-control/",
+  "p": "ai",
+  "s": "Bedrock",
+  "x": "AWS announces the CheckIngestedDocumentAcl and GetIngestedDocumentAcl APIs for Amazon Bedrock Managed Knowledge Base, giving customers a self-service way to debug document access issues and audit document-level…"
+ },
+ {
+  "d": "2026-09-09",
+  "w": 37,
+  "t": "Amazon EBS Volume Clones now supports copying volumes across accounts",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/ebs-volume-clones-cross-account-copy/",
+  "p": "data",
+  "s": "KMS",
+  "x": "Cross-account EBS volume copy with re-encryption under a KMS key in the target account."
+ },
+ {
+  "d": "2026-09-10",
+  "w": 37,
+  "t": "Amazon ECS expands IAM condition key support for RunTask and StartTask APIs",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ecs-expands-condition-key-support/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "Amazon Elastic Container Service (Amazon ECS) now supports the IAM condition keys for CPU and memory resources on the RunTask and StartTask APIs."
+ },
+ {
+  "d": "2026-09-14",
+  "w": 38,
+  "t": "AWS improves regional resiliency for root user sign-in",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/root-user-regional-resiliency/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "Root sign-in served from three US Regions instead of only N. Virginia."
+ },
+ {
+  "d": "2026-09-15",
+  "w": 38,
+  "t": "AWS STS simplifies session token size limits and adds session token size monitoring",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-sts/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "Single 4,096-byte session token limit plus size monitoring."
+ },
+ {
+  "d": "2026-09-15",
+  "w": 38,
+  "t": "Analyze your CloudTrail events using natural language in Amazon Q Console",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/cloudtrail-amazon-q-console/",
+  "p": "posture",
+  "s": "CloudTrail",
+  "x": "Investigate account activity in natural language through Amazon Q."
+ },
+ {
+  "d": "2026-09-18",
+  "w": 38,
+  "t": "AWS Continuum now supports credential testing and accessible domain suggestions",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-security-agent/",
+  "p": "posture",
+  "s": "AWS Continuum",
+  "x": "AWS Continuum for penetration testing is a frontier agent that proactively secures applications throughout the development lifecycle by offering on-demand, customized penetration testing with real exploitability testing."
+ },
+ {
+  "d": "2026-09-18",
+  "w": 38,
+  "t": "AWS PrivateLink announces Tunnel Endpoints to access network segments",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/9/privatelink-tunnel-endpoint/",
+  "p": "network",
+  "s": "PrivateLink",
+  "x": "AWS PrivateLink customers can now use VPC endpoint to privately and securely access network segments in another VPC/account."
+ },
+ {
+  "d": "2026-09-22",
+  "w": 39,
+  "t": "AWS Security Hub AI Inventory adds Azure self-hosted instance support",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/security-hub-ai-inventory-azure-support/",
+  "p": "ai",
+  "s": "Security Hub",
+  "x": "AI Inventory discovers AI assets on self-hosted Microsoft Azure instances."
+ },
+ {
+  "d": "2026-09-24",
+  "w": 39,
+  "t": "AWS Network Security Manager is now generally available in US East (N. Virginia) Region",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/network-security-manager-us-east-va/",
+  "p": "network",
+  "s": "Network Security Manager",
+  "x": "GA of central policy deployment for WAF and Shield Advanced, Network Firewall to follow."
+ },
+ {
+  "d": "2026-09-24",
+  "w": 39,
+  "t": "Amazon RDS for PostgreSQL now supports post-quantum TLS key exchange",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/postgresql-post-quantum-tls-key-exchange/",
+  "p": "data",
+  "s": "RDS",
+  "x": "Starting today, Amazon RDS for PostgreSQL introduces support for post-quantum TLS (PQ-TLS) key exchange, providing you with post-quantum cryptography options for encrypting your data in-transit."
+ },
+ {
+  "d": "2026-09-25",
+  "w": 39,
+  "t": "AWS IAM outbound identity federation now supports interface VPC endpoints for OIDC discovery",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-sts-vpc-oidc/",
+  "p": "identity",
+  "s": "IAM",
+  "x": "AWS Identity and Access Management (IAM) outbound identity federation now supports Amazon Virtual Private Cloud (VPC) endpoints for the OpenID Connect (OIDC) discovery APIs."
+ },
+ {
+  "d": "2026-09-25",
+  "w": 39,
+  "t": "Amazon Transcribe adds customer-managed KMS keys for custom resources",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-transcribe/",
+  "p": "data",
+  "s": "KMS",
+  "x": "Custom vocabularies, filters and language models encrypted with customer managed keys."
+ },
+ {
+  "d": "2026-09-28",
+  "w": 40,
+  "t": "AWS Backup adds logically air-gapped vault support for Amazon FSx for NetApp ONTAP",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-backup-air-gapped-vault-fsx-ontap/",
+  "p": "data",
+  "s": "AWS Backup",
+  "x": "AWS Backup logically air-gapped vault now supports Amazon FSx for NetApp ONTAP."
+ },
+ {
+  "d": "2026-09-29",
+  "w": 40,
+  "t": "Amazon Route 53 Resolver DNS Firewall support for Palo Alto Networks Advanced DNS Security is now Generally Available",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/route-53-dns-firewall-panw-dns-security-generally-available",
+  "p": "network",
+  "s": "Route 53",
+  "x": "PANW Advanced DNS Security rules on DNS Firewall, GA in 32 Regions, no separate firewalls or VPC changes."
+ },
+ {
+  "d": "2026-09-30",
+  "w": 40,
+  "t": "AWS Continuum for Penetration Testing now available in 6 additional Regions",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-continuum-penetration/",
+  "p": "posture",
+  "s": "AWS Continuum",
+  "x": "Managed pentesting of web apps and APIs now in Seoul, Montreal, London, Columbus, Paris and Stockholm."
+ },
+ {
+  "d": "2026-09-30",
+  "w": 40,
+  "t": "AWS IAM Identity Center Identity Store APIs now accept resource ARNs in addition to resource IDs",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/iam-identity-center-apis-arns/",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "ARNs accepted wherever Identity Store APIs took resource IDs; additive and backward compatible."
+ },
+ {
+  "d": "2026-09-30",
+  "w": 40,
+  "t": "AWS accounts now support phone number verification",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-accounts-phone-number-verification/",
+  "p": "identity",
+  "s": "AWS Account Management",
+  "x": "Primary contact phone verified by SMS OTP in the console or via SendPhoneNumberVerification / VerifyPhoneNumber APIs."
+ },
+ {
+  "d": "2026-09-30",
+  "w": 40,
+  "t": "Amazon Kinesis Video Streams now supports VPC endpoints with AWS PrivateLink",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/kinesis-video-streams-vpc-privatelink/",
+  "p": "network",
+  "s": "PrivateLink",
+  "x": "Control plane, ingestion and playback over interface VPC endpoints, no internet gateway or NAT."
+ },
+ {
+  "d": "2026-09-30",
+  "w": 40,
+  "t": "Amazon Redshift simplifies access to secure logging with federated permissions",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/redshift-secure-logging-permissions/",
+  "p": "data",
+  "s": "Redshift",
+  "x": "New DEBUG permission lets chosen identities see unredacted secure logging records under fine-grained access control."
+ },
+ {
+  "d": "2026-09-30",
+  "w": 40,
+  "t": "Uncover blind spots in AWS data plane operations with CloudTrail Event Coverage",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-cloudtrail-event-coverage/",
+  "p": "posture",
+  "s": "CloudTrail",
+  "x": "Console view of which services and resource types have data event logging enabled, at account and org level."
+ },
+ {
+  "d": "2026-10-01",
+  "w": 40,
+  "t": "AWS IAM Identity Center extends multi-Region support to more AWS Regions",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-iam-identity-center-extends-multi-region-support-to-more-aws-regions",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "Replication now reaches opt-in Regions and Regions within GovCloud (US) and China."
+ },
+ {
+  "d": "2026-10-01",
+  "w": 40,
+  "t": "AWS Security Hub introduces remediation plans to prioritize and fix security exposures",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-security-hub-remediation-plans/",
+  "p": "posture",
+  "s": "Security Hub",
+  "x": "Groups exposure findings that share a root cause so one fix resolves or reduces many exposures."
+ },
+ {
+  "d": "2026-10-01",
+  "w": 40,
+  "t": "Amazon GuardDuty now supports centralized management using AWS Organizations declarative policies",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/guardduty-org-enablement-policies/",
+  "p": "threat",
+  "s": "GuardDuty",
+  "x": "Org policy enables GuardDuty in every account and Region; cannot be overridden from console or API."
+ },
+ {
+  "d": "2026-10-01",
+  "w": 40,
+  "t": "Amazon S3 Object Lock variable retention with event holds is now available in AWS GovCloud (US) Regions",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/s3-object-lock-variable-retention-event-holds-aws-govcloud/",
+  "p": "data",
+  "s": "S3",
+  "x": "Event-based WORM retention now in GovCloud (US-East) and GovCloud (US-West)."
+ },
+ {
+  "d": "2026-10-01",
+  "w": 40,
+  "t": "Announcing DNS analytics and insights for Route 53 Global Resolver and DNS Firewall",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/route-53-dns-analytics-insights/",
+  "p": "network",
+  "s": "Route 53",
+  "x": "CloudWatch Metrics and Contributor Insights on DNS query logs, with a new Analytics tab."
+ },
+ {
+  "d": "2026-10-01",
+  "w": 40,
+  "t": "Improve your secrets security posture with actionable recommendations in the AWS Secrets Manager console",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-secrets-manager-security-posture-recommendations",
+  "p": "data",
+  "s": "Secrets Manager",
+  "x": "Recommended Actions in the console: configure rotation, switch to customer managed keys, fix configuration."
+ },
+ {
+  "d": "2026-10-02",
+  "w": 40,
+  "t": "AgentCore Gateway supports private TLS certificates for VPC endpoints",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/agentcore-gateway-private-tls-vpc/",
+  "p": "ai",
+  "s": "AgentCore",
+  "x": "Private-CA-signed certificates on MCP, OpenAPI and HTTP proxy targets, no intermediate ALB."
+ },
+ {
+  "d": "2026-10-02",
+  "w": 40,
+  "t": "GuardDuty Runtime Monitoring is now included in the AWS Security Hub Threat Analytics plan",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-security-hub-runtime-monitoring/",
+  "p": "threat",
+  "s": "GuardDuty",
+  "x": "Runtime Monitoring for EC2, EKS and ECS on Fargate now billed under Security Hub Threat Analytics; no reconfiguration."
+ },
+ {
+  "d": "2026-10-05",
+  "w": 41,
+  "t": "AWS Client VPN now supports device posture assessment",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-client-vpn-device-posture/",
+  "p": "network",
+  "s": "Client VPN",
+  "x": "CrowdStrike, Jamf or JumpCloud signals evaluated with Cedar policies; non-compliant sessions disconnected; monitoring-only mode."
+ },
+ {
+  "d": "2026-10-05",
+  "w": 41,
+  "t": "AWS Continuum for Penetration Testing now supports continuous penetration testing integrated directly into your CI/CD pipeline",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-continuum-penetration-testing/",
+  "p": "posture",
+  "s": "AWS Continuum",
+  "x": "Public preview: pentest at deploy time, findings in pipeline output, fixes re-tested automatically."
+ },
+ {
+  "d": "2026-10-05",
+  "w": 41,
+  "t": "AWS Control Tower AFT now supports plan-only customization runs",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-control-tower-aft/",
+  "p": "posture",
+  "s": "Control Tower",
+  "x": "Run a Terraform plan for global and account customizations without applying changes."
+ },
+ {
+  "d": "2026-10-05",
+  "w": 41,
+  "t": "AWS IAM Identity Center now supports network access controls for Identity Store",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-identity-store-network-controls/",
+  "p": "identity",
+  "s": "IAM Identity Center",
+  "x": "Restrict the Identity Store API to VPC endpoints, source VPCs or IP ranges, and the SCIM API to IP ranges. Off by default."
+ },
+ {
+  "d": "2026-10-05",
+  "w": 41,
+  "t": "AWS Private CA now provides detailed certificate issuance logs",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-private-ca-certificate-issuance-logs/",
+  "p": "data",
+  "s": "Private CA",
+  "x": "New CloudTrail event with full certificate content, issuing CA, requester and status for every issuance, failed ones included."
+ },
+ {
+  "d": "2026-10-06",
+  "w": 41,
+  "t": "AWS Certificate Manager now supports ACME issuance through AWS PrivateLink",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/AWS-Certificate-Manager-ACME-Privatelink",
+  "p": "data",
+  "s": "Certificate Manager",
+  "x": "Request and renew public TLS certificates over a VPC interface endpoint, with no ACME client changes."
+ },
+ {
+  "d": "2026-10-07",
+  "w": 41,
+  "t": "AWS Config now supports 77 new resource types",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-config-new-resource-types",
+  "p": "posture",
+  "s": "Config",
+  "x": "77 resource types added, including Identity Center applications and GuardDuty entity sets; tracked automatically when recording all types."
+ },
+ {
+  "d": "2026-10-08",
+  "w": 41,
+  "t": "AWS Network Firewall adds wildcard support for container attribute filters",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-network-firewall-container-attributes-wildcard",
+  "p": "network",
+  "s": "Network Firewall",
+  "x": "Wildcard patterns such as app=payments-* match every variant of an EKS or ECS workload in one rule."
+ },
+ {
+  "d": "2026-10-08",
+  "w": 41,
+  "t": "Amazon GuardDuty RDS Protection now detects data exfiltration and destruction in Aurora and RDS databases",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/guardduty-rds-data-exfiltration/",
+  "p": "threat",
+  "s": "GuardDuty",
+  "x": "Query-pattern anomaly detection for Aurora PostgreSQL and RDS for PostgreSQL, no agents; 30-day free trial."
+ },
+ {
+  "d": "2026-10-09",
+  "w": 41,
+  "t": "AWS Lambda supports OAuth authentication for self-managed Apache Kafka event sources",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-Lambda-supports-oauth-kafka-esm/",
+  "p": "identity",
+  "s": "Lambda",
+  "x": "Kafka event source mappings authenticate through an enterprise identity provider such as Cognito or Okta."
+ },
+ {
+  "d": "2026-10-09",
+  "w": 41,
+  "t": "AWS Security Hub now exports findings to S3 in CSV or JSON format",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/security-hub-exports-s3-csv-json/",
+  "p": "posture",
+  "s": "Security Hub",
+  "x": "On-demand export from every findings page to your S3 bucket, in CSV or OCSF JSON."
+ }
+]
