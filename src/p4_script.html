@@ -4,6 +4,7 @@
   const DATA = __DATA__;
   const STATIC = __STATIC__;
   const UI = __UI__;
+  const HL = __HL__;
   const PILLARS = ['threat', 'identity', 'posture', 'network', 'data', 'ai'];
   const LOCALE = { en: 'en-US', pt: 'pt-BR', es: 'es-MX' };
   const MAXW = Math.max(...DATA.map(r => r.w));
@@ -150,6 +151,23 @@
     $('results').innerHTML = html;
   }
 
+  /* ---------- this week's highlights ---------- */
+  function renderHighlights() {
+    const sec = $('highlights');
+    if (!HL || !HL.items || !HL.items.length) { sec.hidden = true; return; }
+    sec.hidden = false;
+    $('hlTitle').textContent = t('hlTitle', { w: HL.w });
+    $('hlSub').textContent = t('hlSub', { range: weekRange(HL.w), n: HL.items.length });
+    $('hlHeadline').textContent = HL.headline || '';
+    $('hlHeadline').lang = HL.lang;
+    $('hlList').innerHTML = HL.items.map(r => `<div class="item" lang="${esc(HL.lang)}"><div class="date">${esc(itemDate(r.d))}</div><div class="body">
+      <div class="tags"><span class="tag prio-${esc(r.priority)}">${esc(t('prio_' + r.priority))}</span><span class="tag ${esc(r.p)}">${esc(pName(r.p))}</span><span class="tag svc">${esc(r.s)}</span></div>
+      <a class="title" href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)}</a>
+      <p class="why"><b>${esc(t('hlWhy'))}:</b> ${esc(r.why)}</p>
+      ${r.action ? `<p class="act"><b>${esc(t('hlAction'))}:</b> ${esc(r.action)}</p>` : ''}</div></div>`).join('');
+    $('hlNote').textContent = HL.lang !== state.lang ? t('hlLang_' + HL.lang) : '';
+  }
+
   /* ---------- deep dive visibility ---------- */
   let ddNote = null;
   function renderDeepDive() {
@@ -175,7 +193,7 @@
 
   function render() {
     const rows = DATA.filter(r => match(r));
-    renderStats(); renderChips(); renderServiceSel(); renderWeekSel(); renderChart(); renderSummary(rows); renderResults(rows); renderDeepDive();
+    renderStats(); renderChips(); renderServiceSel(); renderWeekSel(); renderChart(); renderSummary(rows); renderResults(rows); renderDeepDive(); renderHighlights();
   }
 
   /* ---------- events ---------- */

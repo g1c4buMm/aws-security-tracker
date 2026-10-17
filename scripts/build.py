@@ -5,6 +5,8 @@ Usage:  python3 scripts/build.py [--updated YYYY-MM-DD]
 
 The latest week, the "Updated" date and the source date range are computed
 from the data, so no HTML needs hand edits when a new week is added.
+The newest data/highlights/wNN.json, written by the Security Weekly Radar,
+fills the "This week's highlights" section; without one the section stays hidden.
 --updated defaults to today.
 """
 import argparse
@@ -61,12 +63,18 @@ def main() -> None:
     # {{UPDATED}} in English maps to the PT/ES dates
     static[tokens["{{UPDATED}}"]] = {"pt": tokens["{{UPDATED_PT}}"], "es": tokens["{{UPDATED_ES}}"]}
 
+    hl_files = sorted((ROOT / "data" / "highlights").glob("w*.json"), key=lambda p: int(p.stem[1:]))
+    highlights = load(hl_files[-1]) if hl_files else None
+
     parts = {p: fill((SRC / p).read_text(encoding="utf-8")) for p in PARTS}
     html = "".join(parts.values())
     for name, obj in (("__DATA__", data), ("__STATIC__", static), ("__UI__", load(I18N / "ui.json"))):
         if name not in html:
             sys.exit(f"placeholder {name} missing in src/")
         html = html.replace(name, json.dumps(obj, ensure_ascii=False), 1)
+    if "__HL__" not in html:
+        sys.exit("placeholder __HL__ missing in src/")
+    html = html.replace("__HL__", json.dumps(highlights, ensure_ascii=False), 1)
     if "{{" in html:
         sys.exit("unfilled token left in output")
 

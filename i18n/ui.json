@@ -30,7 +30,17 @@
   "empty": "No launches match these filters. Try clearing one of them.",
   "ddNoMatch": "No week 40 deep-dive article matches these filters.",
   "prevAria": "Previous week",
-  "nextAria": "Next week"
+  "nextAria": "Next week",
+  "hlTitle": "This week's highlights · W{w}",
+  "hlSub": "{range} · {n} picks from the Security Weekly Radar",
+  "hlWhy": "Why it matters",
+  "hlAction": "Action",
+  "prio_high": "Act this week",
+  "prio_medium": "Plan this quarter",
+  "prio_low": "Good to track",
+  "hlLang_en": "Highlights written in English.",
+  "hlLang_pt": "Highlights written in Portuguese.",
+  "hlLang_es": "Highlights written in Spanish."
  },
  "pt": {
   "p_threat": "Detecção de ameaças",
@@ -63,7 +73,17 @@
   "empty": "Nenhum lançamento corresponde a estes filtros. Tente remover um deles.",
   "ddNoMatch": "Nenhum artigo do deep dive da semana 40 corresponde a estes filtros.",
   "prevAria": "Semana anterior",
-  "nextAria": "Próxima semana"
+  "nextAria": "Próxima semana",
+  "hlTitle": "Destaques da semana · S{w}",
+  "hlSub": "{range} · {n} escolhas do Radar Semanal de Segurança",
+  "hlWhy": "Por que importa",
+  "hlAction": "Ação",
+  "prio_high": "Agir nesta semana",
+  "prio_medium": "Planejar no trimestre",
+  "prio_low": "Bom acompanhar",
+  "hlLang_en": "Destaques escritos em inglês.",
+  "hlLang_pt": "Destaques escritos em português.",
+  "hlLang_es": "Destaques escritos em espanhol."
  },
  "es": {
   "p_threat": "Detección de amenazas",
@@ -96,6 +116,16 @@
   "empty": "Ningún lanzamiento coincide con estos filtros. Intente quitar uno.",
   "ddNoMatch": "Ningún artículo del deep dive de la semana 40 coincide con estos filtros.",
   "prevAria": "Semana anterior",
-  "nextAria": "Semana siguiente"
+  "nextAria": "Semana siguiente",
+  "hlTitle": "Destacados de la semana · S{w}",
+  "hlSub": "{range} · {n} elegidos por el Radar Semanal de Seguridad",
+  "hlWhy": "Por qué importa",
+  "hlAction": "Acción",
+  "prio_high": "Actuar esta semana",
+  "prio_medium": "Planificar en el trimestre",
+  "prio_low": "Bueno seguir",
+  "hlLang_en": "Destacados escritos en inglés.",
+  "hlLang_pt": "Destacados escritos en portugués.",
+  "hlLang_es": "Destacados escritos en español."
  }
 }
