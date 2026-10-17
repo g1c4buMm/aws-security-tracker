@@ -5,7 +5,7 @@
 #   TARGET=amplify AMPLIFY_APP_ID=d123abc AMPLIFY_BRANCH=main ./scripts/deploy.sh data/weeks/w41.json
 #   TARGET=s3 S3_BUCKET=my-tracker-bucket CF_DISTRIBUTION_ID=E123ABC ./scripts/deploy.sh data/weeks/w41.json
 #   TARGET=github ./scripts/deploy.sh data/weeks/w42.json   # commit + push; GitHub Actions publishes to Pages
-#   (data/highlights/wNN.json, written by the Security Weekly Radar, is committed with the week)
+#   (data/highlights/wNN.json and cards/wNN.png, written by the Security Weekly Radar, are committed with the week)
 #
 # Needs: python3; for amplify/s3, AWS CLI v2 with credentials (AWS_PROFILE or SSO) and curl, zip.
 set -euo pipefail
@@ -44,6 +44,7 @@ case "$TARGET" in
   github)
     git add data/launches.json ${WEEK_FILE:+"$WEEK_FILE"}
     [[ -d data/highlights ]] && git add data/highlights
+    [[ -d cards ]] && git add cards
     if git diff --cached --quiet; then
       echo "Nothing new to commit"
     else

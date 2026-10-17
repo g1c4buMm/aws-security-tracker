@@ -3,7 +3,7 @@ name: Build and deploy tracker
 on:
   push:
     branches: [main]
-    paths: ["data/**", "src/**", "i18n/**", "scripts/**", ".github/workflows/pages.yml"]
+    paths: ["data/**", "cards/**", "src/**", "i18n/**", "scripts/**", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -28,10 +28,11 @@ jobs:
           for f in data/weeks/*.json; do python3 scripts/add_week.py "$f"; done
       - name: Build page
         run: python3 scripts/build.py --updated "$(TZ=America/Sao_Paulo date +%F)"
-      - name: Keep only the published page
+      - name: Keep only the published page and the weekly LinkedIn images
         run: |
           mkdir -p _site
           cp dist/index.html _site/index.html
+          if [ -d cards ]; then cp -r cards _site/cards; fi
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
