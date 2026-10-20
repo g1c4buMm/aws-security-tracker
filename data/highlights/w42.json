@@ -1,7 +1,7 @@
 {
  "w": 42,
  "lang": "pt",
- "headline": "Semana de priorização e proteção de dados: AWS Security Hub passa a considerar a criticidade do recurso, Amazon OpenSearch Service ganha criptografia por índice e chegam 5 boletins novos de segurança.",
+ "headline": "Security Hub passa a priorizar exposições pelo quanto o recurso importa para o negócio e ganha checagens alinhadas ao perfil CRI, criado por instituições financeiras.",
  "items": [
   {
    "d": "2026-10-14",
@@ -9,9 +9,29 @@
    "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/security-hub-resource-criticality/",
    "p": "threat",
    "s": "AWS Security Hub",
+   "priority": "high",
+   "why": "O Security Hub agora considera a criticidade do recurso ao priorizar exposições. O time central passa a atacar primeiro o que ameaça os recursos mais críticos para o negócio.",
+   "action": "Crie uma regra de automação que marque como Very High os recursos das contas de produção mais sensíveis e revise a nova ordem de prioridade."
+  },
+  {
+   "d": "2026-10-15",
+   "t": "AWS Security Hub CSPM now supports the Cyber Risk Institute profile version 2.2",
+   "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/security-hub-cspm-cri-profile-v22/",
+   "p": "threat",
+   "s": "AWS Security Hub",
+   "priority": "high",
+   "why": "O Security Hub CSPM ganhou checagens automáticas alinhadas ao perfil do Cyber Risk Institute, um framework criado por instituições financeiras para harmonizar expectativas de cibersegurança e regulação do setor.",
+   "action": "Em contas de bancos e fintechs, ative o padrão CRI v2.2 em uma conta de teste e compare os achados com os controles que o time já reporta."
+  },
+  {
+   "d": "2026-10-15",
+   "t": "AWS Security Agent (now part of AWS Continuum) exploited 33 of 37 new real-world CVEs",
+   "u": "https://aws.amazon.com/blogs/security/aws-security-agent-now-part-of-aws-continuum-exploited-33-of-37-new-real-world-cves/",
+   "p": "threat",
+   "s": "AWS Continuum",
    "priority": "medium",
-   "why": "O AWS Security Hub passa a usar a criticidade do recurso para priorizar exposições. O time central foca primeiro nos recursos mais críticos para o negócio.",
-   "action": "Revisar as tags de recursos críticos e criar uma regra de automação que marque os recursos das contas de produção com a maior criticidade."
+   "why": "O AWS Security Agent, agora parte do AWS Continuum, explorou 33 de 37 CVEs reais e recentes, partindo de acesso sem autenticação ou de baixo privilégio. É um dado concreto sobre teste de intrusão autônomo.",
+   "action": "Leia a metodologia e defina com o time em que ambiente um agente de pentest poderia rodar com segurança, começando por homologação."
   },
   {
    "d": "2026-10-12",
@@ -20,8 +40,8 @@
    "p": "threat",
    "s": "Amazon GuardDuty",
    "priority": "medium",
-   "why": "Desde 20 de maio de 2026, o Amazon GuardDuty Extended Threat Detection anexa cinco tipos de indicador às sequências de ataque. São MALICIOUS_PACKAGE, MISCONFIGURATION, REACHABILITY, SENSITIVE_DATA e VULNERABILITY, nas findings de severidade crítica.",
-   "action": "Atualizar os playbooks de resposta para considerar os novos indicadores nas findings de sequência de ataque."
+   "why": "O GuardDuty Extended Threat Detection anexa cinco novos tipos de indicador às sequências de ataque: pacote malicioso, configuração incorreta, alcançabilidade, dado sensível e vulnerabilidade. A investigação começa com mais contexto.",
+   "action": "Abra uma sequência de ataque recente no console e confira quais indicadores novos aparecem antes de ajustar o runbook de resposta."
   },
   {
    "d": "2026-10-12",
@@ -30,38 +50,18 @@
    "p": "data",
    "s": "AWS KMS",
    "priority": "medium",
-   "why": "O Amazon OpenSearch Service agora permite criptografar cada índice com sua própria chave gerenciada pelo cliente no AWS KMS. Isso separa dados de donos ou sensibilidades diferentes no mesmo domínio.",
-   "action": "Mapear domínios do Amazon OpenSearch Service multi-tenant ou com dados sensíveis e planejar chaves AWS KMS por índice ao criar novos domínios."
+   "why": "O OpenSearch Service agora criptografa cada índice com a sua própria chave gerenciada pelo cliente no AWS KMS. Dados de donos ou sensibilidades diferentes ficam separados por chave no mesmo domínio.",
+   "action": "Mapeie domínios compartilhados entre clientes ou áreas e planeje uma chave KMS por índice para os dados mais sensíveis."
   },
   {
-   "d": "2026-10-12",
-   "t": "Quantum-resistant signing on AWS, Part 2: Enforce your ML-DSA algorithm policy with SCPs and IAM",
-   "u": "https://aws.amazon.com/blogs/security/quantum-resistant-signing-on-aws-part-2-enforce-your-ml-dsa-algorithm-policy-with-scps-and-iam/",
-   "p": "identity",
-   "s": "AWS IAM",
-   "priority": "medium",
-   "why": "O post mostra como impor uma política de algoritmos de assinatura pós-quântica com SCPs e IAM. Com isso, escolhas fora da política podem ser bloqueadas de forma preventiva.",
-   "action": "Definir quais conjuntos de parâmetros ML-DSA são aceitos e testar uma SCP de restrição em uma OU de sandbox."
-  },
-  {
-   "d": "2026-10-15",
-   "t": "AWS Security Hub CSPM now supports the Cyber Risk Institute profile version 2.2",
-   "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/security-hub-cspm-cri-profile-v22/",
-   "p": "threat",
-   "s": "AWS Security Hub",
-   "priority": "medium",
-   "why": "O AWS Security Hub CSPM ganha verificações automáticas alinhadas ao CRI Profile, framework do setor financeiro. Ajuda instituições financeiras a avaliar uma vez e reportar para várias regulações.",
-   "action": "No setor financeiro, habilitar o padrão CRI no AWS Security Hub CSPM e comparar com os controles atuais."
-  },
-  {
-   "d": "2026-10-12",
-   "t": "AWS Secrets Manager adds managed external secrets support for Databricks and Twilio",
-   "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/secrets-manager-managed-external-secrets-databricks-twilio/",
+   "d": "2026-10-14",
+   "t": "AWS Transfer Family now supports AWS Secrets Manager storage for SFTP server host keys",
+   "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/transfer-family-secrets-host-keys/",
    "p": "data",
    "s": "AWS Secrets Manager",
-   "priority": "medium",
-   "why": "O AWS Secrets Manager passa a rotacionar automaticamente credenciais de Databricks e Twilio. Credenciais de longa duração costumam ficar sem rotação, e a rotação gerenciada reduz esse risco.",
-   "action": "Listar as credenciais de Databricks e Twilio usadas pelas aplicações e configurar a rotação gerenciada."
+   "priority": "low",
+   "why": "O Transfer Family agora guarda as host keys dos servidores SFTP no AWS Secrets Manager da sua própria conta. A identidade do servidor fica sob seu controle em migração e failover.",
+   "action": "Inclua as host keys dos servidores SFTP críticos no inventário de segredos e no plano de recuperação."
   }
  ]
 }
