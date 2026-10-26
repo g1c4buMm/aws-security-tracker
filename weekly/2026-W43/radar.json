@@ -1,0 +1,122 @@
+{
+  "headline": "PHP2Shell foi explorado antes da divulgação e já tem mitigação no AWS WAF: atualize os servidores PHP expostos esta semana e confira a nova CVE-2026-115560.",
+  "highlights": [
+    {
+      "item_id": "c0f1af6b",
+      "priority": "high",
+      "why_it_matters": "A regra PHP2Shell_BODY do grupo gerenciado de aplicações PHP do AWS WAF, versão 2.4 ou superior, já bloqueia requisições POST usadas no ataque. O PHP divulgou também a CVE-2026-115560, outra RCE que as versões de 21 de outubro não corrigem. Ela afeta só aplicações com session upload progress ativado.",
+      "action": "Confirme que os web ACLs das aplicações PHP usam o grupo de regras na versão 2.4 ou superior e verifique se o session upload progress está ativado."
+    },
+    {
+      "item_id": "30761be5",
+      "priority": "high",
+      "why_it_matters": "A Amazon Threat Intelligence viu exploração do PHP2Shell no MadPot quatro dias antes da divulgação pública. O ataque já circula, então a janela para corrigir é curta.",
+      "action": "Busque nos logs sinais de exploração do PHP2Shell e priorize a atualização dos servidores PHP expostos."
+    },
+    {
+      "item_id": "78c7bd58",
+      "priority": "medium",
+      "why_it_matters": "O AWS Continuum for code vulnerabilities chegou ao GA para descobrir, validar, priorizar e corrigir vulnerabilidades de código. Usa topologia, identidade e alcance de rede para medir o risco real e confirma com testes o que é explorável.",
+      "action": "Avalie um piloto do AWS Continuum em uma aplicação crítica."
+    },
+    {
+      "item_id": "77d230c5",
+      "priority": "medium",
+      "why_it_matters": "O Amazon GuardDuty Runtime Monitoring ganhou regras opcionais de detecção para EC2, EKS e ECS, mapeadas ao MITRE ATT&CK. Elas cobrem casos como alteração do sudoers e desativação de logs de auditoria.",
+      "action": "Revise as regras opcionais e ative primeiro as de persistência e evasão de defesa."
+    },
+    {
+      "item_id": "611ad96c",
+      "priority": "medium",
+      "why_it_matters": "O AWS Network Firewall agora valida se o IP de destino veio do Route 53 VPC Resolver da sua VPC. Isso fecha o desvio das regras de domínio e estende a filtragem a SSH e SFTP.",
+      "action": "Avalie ativar a validação de IP nas regras de domínio para tráfego de saída SSH e SFTP."
+    },
+    {
+      "item_id": "dd62c292",
+      "priority": "medium",
+      "why_it_matters": "O IAM Identity Center agora preserva usuários, grupos e atribuições ao trocar a fonte de identidade de Active Directory para um IdP externo. Isso reduz o risco de perda de acesso ou de permissões erradas na migração.",
+      "action": "Se a sua fonte ainda é Active Directory, revise o plano de migração e valide as atribuições após a troca."
+    },
+    {
+      "item_id": "a2ac10bd",
+      "priority": "medium",
+      "why_it_matters": "A nova API UpdateObjectEncryption com S3 Batch Operations migra objetos de SSE-S3 para SSE-KMS no lugar. Não é preciso mover dados, e as políticas de S3 Lifecycle continuam funcionando.",
+      "action": "Liste os buckets que ainda usam SSE-S3 e planeje a migração para SSE-KMS."
+    }
+  ],
+  "also_noted": [
+    "5e1be287",
+    "8def849e",
+    "aa71ccf1",
+    "2ea8f912",
+    "01e67409",
+    "f45aa9c8",
+    "61862dbc",
+    "c4a79482",
+    "1714d516",
+    "38329cb0"
+  ],
+  "question": "Seus servidores PHP expostos já estão atualizados contra o PHP2Shell, ou o WAF está segurando a porta sozinho?",
+  "cves": [
+    {
+      "item_id": "41ccadb2",
+      "note": "RCE sem autenticação no PHP. Atualize para 8.5.12, 8.4.27, 8.3.36 ou 8.2.35. Elas não corrigem a CVE-2026-115560, que afeta quem usa session upload progress."
+    },
+    {
+      "item_id": "13b91c68",
+      "note": "A AWS remove dos trust bundles três raízes afetadas pela falha na CA eMudhra/emSign. Cheque certificados de origens custom no CloudFront e de OIDC/JWT no ALB."
+    },
+    {
+      "item_id": "e21314ce",
+      "note": "default_bucket() do SageMaker Python SDK não verifica o dono do bucket S3. Pode levar a execução de código e obtenção de credenciais IAM."
+    },
+    {
+      "item_id": "3c7e628a",
+      "note": "Política IAM do CICD-toolchain-for-serverless-applications antes da 1.0.11 permite escalonamento de privilégio por quem tem push no repositório."
+    },
+    {
+      "item_id": "6d8eb182",
+      "note": "Athena engine version 3 podia expor IDs de conta e texto SQL de outras contas. Resultados e dados no S3 não ficaram acessíveis."
+    },
+    {
+      "item_id": "5cabfa4b",
+      "note": "Validador do run_script no AWS MCP Server permitia execução de código na própria sessão isolada. Relevante para times com agentes de IA."
+    },
+    {
+      "item_id": "93aba748",
+      "note": "Servidor A2A do Strands Agents SDK não isolava o estado de conversa entre chamadores. Atualize agentes expostos via HTTP."
+    },
+    {
+      "item_id": "88af8529",
+      "note": "Injeção de comando no hook Terraform do AWS SAM CLI. Revise pipelines que rodam sam build com planos Terraform de origem não confiável."
+    },
+    {
+      "item_id": "f563dc94",
+      "note": "Multi Model Server está em fim de vida e arquivado. Arquivo de modelo malicioso pode levar a execução de código. Planeje a migração."
+    },
+    {
+      "item_id": "3cfbf655",
+      "note": "aws-c-mqtt de 0.9.1 até antes de 0.16.2 permite DoS do cliente. Verifique o AWS CRT e o AWS IoT Device SDK for C++ v2."
+    },
+    {
+      "item_id": "be5fe36c",
+      "note": "Falha de autorização no canal WhatsApp do Kiro Crew. Revise os grupos permitidos e a política de mensagem direta aberta."
+    },
+    {
+      "item_id": "479bf224",
+      "note": "SSRF no port forwarding do Session Manager no AWS Systems Manager Agent. Confirme a versão do agente na frota."
+    },
+    {
+      "item_id": "a41ef7e9",
+      "note": "Falta verificação do dono do bucket S3 no plugin do AWS Security Agent e no MCP Server."
+    },
+    {
+      "item_id": "f91926ec",
+      "note": "Validação SQL do postgres-mcp-server permitia alterar dados além do escopo somente leitura."
+    },
+    {
+      "item_id": "ee09ab7f",
+      "note": "XSS armazenado via expressões Vega no OpenSearch Dashboards."
+    }
+  ]
+}
