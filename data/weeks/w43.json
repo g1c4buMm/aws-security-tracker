@@ -1,0 +1,90 @@
+[
+ {
+  "d": "2026-10-22",
+  "t": "AWS Continuum for code vulnerabilities is now generally available",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-continuum-for-code-vulnerabilities-is-now-generally-available",
+  "p": "threat",
+  "s": "continuum",
+  "x": "Today, AWS announces the general availability of AWS Continuum for code vulnerabilities."
+ },
+ {
+  "d": "2026-10-21",
+  "t": "AWS Service Reference Information now supports global condition keys, service names, and data plane classification",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-service-reference-information-global-condition-keys-service-names-data-plane/",
+  "p": "identity",
+  "s": "iam",
+  "x": "AWS is expanding programmatic service reference information to help you automate IAM policy management and keep your policies aligned with the latest service updates."
+ },
+ {
+  "d": "2026-10-21",
+  "t": "Amazon Cognito extends multi-Region replication to AWS GovCloud (US) Regions",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/cognito-multi-region-us-govcloud/",
+  "p": "identity",
+  "s": "cognito",
+  "x": "Amazon Cognito multi-Region replication (MRR) now supports AWS GovCloud (US) Regions, extending the resilience benefits of MRR to more workloads."
+ },
+ {
+  "d": "2026-10-21",
+  "t": "Amazon S3 server access log delivery to Amazon CloudWatch Logs now available in five additional AWS Regions",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-s3-server-access-logs-cloudwatch-logs-regions/",
+  "p": "identity",
+  "s": "kms",
+  "x": "Amazon S3 server access log delivery to Amazon CloudWatch Logs is now available in the AWS GovCloud (US) Regions, AWS European Sovereign Cloud, and AWS China Regions."
+ },
+ {
+  "d": "2026-10-21",
+  "t": "AWS Network Firewall now supports Route 53 Resolved IP Validation",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/network-firewall-route-53-ip-validation/",
+  "p": "network",
+  "s": "network-firewall",
+  "x": "AWS Network Firewall now supports IP validation, extending domain-based filtering beyond HTTP/HTTPS to protocols such as SFTP and SSH."
+ },
+ {
+  "d": "2026-10-21",
+  "t": "AWS Transform now builds new networks and modernizes security groups",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-transform-new-networks/",
+  "p": "identity",
+  "s": "AWS",
+  "x": "AWS Transform for migrations now gives you three ways to bring your network to AWS."
+ },
+ {
+  "d": "2026-10-20",
+  "t": "Amazon WorkSpaces simplifies secure AI agent access to enterprise cloud desktops with less infrastructure to operate and manage",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/workspaces-ai-agents-oauth-connection-management",
+  "p": "ai",
+  "s": "AWS",
+  "x": "WorkSpaces for AI agents now handles authentication and desktop connections as part of the managed Model Context Protocol (MCP) service, so you can connect agents to governed cloud desktops, removing the need to write cu"
+ },
+ {
+  "d": "2026-10-20",
+  "t": "Amazon Bedrock Guardrails now supports Standard tier for contextual grounding checks",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/bedrock-guardrails-grounding-standard/",
+  "p": "ai",
+  "s": "bedrock-guardrails",
+  "x": "Amazon Bedrock Guardrails now offers a Standard tier for contextual grounding checks, which detect and filter hallucinations by checking whether a model response is grounded in your reference source and relevant to the u"
+ },
+ {
+  "d": "2026-10-20",
+  "t": "AWS IAM Identity Center simplifies identity source changes from Active Directory",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/iam-identity-center-chg-id-src-from-ad/",
+  "p": "identity",
+  "s": "iam-identity-center",
+  "x": "AWS IAM Identity Center now retains your workforce identities and their assignments when you change your identity source from Active Directory to an external identity provider (IdP), such as Okta or Microsoft Entra ID, o"
+ },
+ {
+  "d": "2026-10-20",
+  "t": "AWS Transform for migrations expands support for existing landing zones",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-transform-migrations-landing-zones/",
+  "p": "posture",
+  "s": "organizations",
+  "x": "AWS Transform now supports more types of existing AWS environments when building landing zones for your migration, including AWS Control Tower landing zones and landing zones built with AWS Organizations."
+ },
+ {
+  "d": "2026-10-19",
+  "t": "Amazon GuardDuty adds optional threat detection rules for Runtime Monitoring",
+  "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/guardduty-runtime-optional-detection-rules/",
+  "p": "threat",
+  "s": "guardduty",
+  "x": "Amazon GuardDuty now supports optional detection rules for Runtime Monitoring."
+ }
+]
