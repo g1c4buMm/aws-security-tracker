@@ -1,1 +1,0 @@
-Radar Semanal de Segurança AWS | PHP2Shell foi explorado antes da divulgação e já tem mitigação no AWS WAF: atualize os servidores PHP expostos esta semana e confira a nova CVE-2026-115560.
