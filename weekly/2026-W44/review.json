@@ -1,0 +1,17 @@
+{
+  "verdict": "fix",
+  "issues": [
+    {
+      "item_id": "78c7bd58",
+      "field": "why_it_matters",
+      "problem": "The text says Continuum uses topology, identity and network reachability to show what is exploitable. The item says something different. The context graph (topology, identity, reachability) tells Continuum which findings carry real business risk. Exploitability is confirmed by testing. The radar gives the graph a job the item does not give it.",
+      "suggestion": "Use: 'O AWS Continuum for code vulnerabilities chegou ao GA. Ele descobre, valida, prioriza e corrige vulnerabilidades de código. Usa topologia, identidade e alcance de rede para medir o risco real e confirma com testes o que é explorável.'"
+    },
+    {
+      "item_id": "c0f1af6b",
+      "field": "why_it_matters",
+      "problem": "Style only. The second sentence is long and joins two ideas with 'e que'. The first-pass suggestion split it in two.",
+      "suggestion": "Split it: 'O PHP divulgou também a CVE-2026-115560, outra RCE que as versões de 21 de outubro não corrigem. Ela afeta só aplicações com session upload progress ativado.'"
+    }
+  ]
+}
