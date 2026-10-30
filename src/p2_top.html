@@ -8,7 +8,15 @@
       <button type="button" data-lang="es" aria-pressed="false">ES</button>
     </div>
   </div>
+  <nav class="tabs" aria-label="Sections" data-dyn>
+    <div class="wrap" role="tablist">
+      <button type="button" class="tab" role="tab" id="tabLaunches" data-view="launches" aria-selected="true" aria-controls="viewLaunches"></button>
+      <button type="button" class="tab" role="tab" id="tabCfp" data-view="cfp" aria-selected="false" aria-controls="viewCfp"></button>
+    </div>
+  </nav>
 </header>
+
+<div id="viewLaunches" role="tabpanel" aria-labelledby="tabLaunches">
 
 <section class="hero" id="top">
   <div class="wrap">

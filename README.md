@@ -8,8 +8,9 @@ Static site with every AWS security, identity, governance and compliance launch 
 |---|---|
 | `data/launches.json` | All launches (source of truth) |
 | `data/weeks/wNN.json` | One file per week, merged into `launches.json` |
-| `src/` | Page template (head, top, W40 deep dive, script) |
-| `i18n/` | Page strings in EN, PT, ES |
+| `data/cfps.json` | Call for papers tab: security and cloud CFPs (Brazil, LATAM, global), refreshed by the CFP scan |
+| `src/` | Page template (head, top, W40 deep dive, script, Call for papers tab) |
+| `i18n/` | Page strings in EN, PT, ES (`cfp.json` for the Call for papers tab) |
 | `scripts/add_week.py` | Validates and merges a week file |
 | `scripts/build.py` | Builds `dist/index.html` (full page) and `dist/artifact.html` |
 | `scripts/deploy.sh` | Merge + build + deploy (GitHub, Amplify or S3) |

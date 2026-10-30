@@ -1,0 +1,195 @@
+
+</div>
+
+<style>
+/* view tabs */
+.tabs { border-top: 1px solid var(--border); }
+.tabs .wrap { display: flex; gap: 4px; overflow-x: auto; }
+.tab { font: 600 13.5px/1 'Inter', system-ui, sans-serif; color: var(--fg3); background: none; border: 0; border-bottom: 2px solid transparent; padding: 12px 12px 10px; cursor: pointer; white-space: nowrap; display: inline-flex; gap: 8px; align-items: center; }
+.tab:hover { color: var(--fg); }
+.tab[aria-selected="true"] { color: var(--fg); border-bottom-color: var(--accent); }
+.tab .n { font-size: 11px; font-weight: 700; background: var(--data-bg); color: var(--data); border-radius: 999px; padding: 2px 7px; }
+.tab:focus-visible, .cfp-row-head:focus-visible, .cfp-search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* call for papers view */
+.cfp-tools { display: grid; gap: 12px; margin-bottom: 16px; }
+.cfp-search input { width: 100%; font: 15px 'Inter', system-ui, sans-serif; padding: 11px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--fg); }
+.cfp-filters { display: flex; flex-wrap: wrap; gap: 10px; }
+.cfp-group { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; border: 1.5px solid var(--gc); border-radius: 12px; padding: 6px 8px; background: var(--surface); }
+.cfp-group > span { font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gc); margin-right: 2px; }
+.cfp-group .chip { padding: 6px 11px; }
+.cfp-group .chip[aria-pressed="true"] { background: var(--gc); border-color: var(--gc); color: var(--surface); }
+#cfpRegion { --gc: var(--identity); } #cfpStatus { --gc: var(--data); } #cfpKind { --gc: var(--accent-ink); }
+.cfp-count { font-size: 12.5px; color: var(--fg3); }
+.cfp-list { display: grid; gap: 8px; }
+.cfp-row { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.cfp-row.urgent { border-left: 4px solid var(--threat); }
+.cfp-row-head { display: grid; grid-template-columns: 60px minmax(0, 1fr) auto; gap: 14px; align-items: center; width: 100%; padding: 12px 16px; background: none; border: 0; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.cfp-date { font-family: 'JetBrains Mono', ui-monospace, monospace; text-align: center; line-height: 1.15; border-right: 1px solid var(--border); padding-right: 12px; }
+.cfp-date b { display: block; font-size: 20px; font-weight: 500; }
+.cfp-date span { font-size: 11px; text-transform: uppercase; color: var(--fg3); }
+.cfp-name { font-weight: 600; }
+.cfp-meta { font-size: 12.5px; color: var(--fg3); display: flex; flex-wrap: wrap; gap: 2px 12px; }
+.cfp-right { display: grid; justify-items: end; gap: 4px; }
+.cfp-days { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; color: var(--fg3); }
+.cfp-days.hot { color: var(--threat); font-weight: 500; }
+.cfp-est { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10.5px; color: var(--fg3); border: 1px dashed var(--border); border-radius: 4px; padding: 0 5px; }
+.tag.st-aberto { background: var(--data-bg); color: var(--data); } .tag.st-previsto { background: var(--identity-bg); color: var(--identity); }
+.tag.st-curadoria { background: var(--posture-bg); color: var(--posture); } .tag.st-fechado { background: var(--surface2); color: var(--fg3); border: 1px solid var(--border); }
+.cfp-detail { border-top: 1px solid var(--border); padding: 14px 16px; display: grid; gap: 12px; font-size: 13.5px; }
+.cfp-kv { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px 16px; }
+.cfp-kv small { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--fg3); }
+.cfp-kv div div { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12.5px; }
+.cfp-detail p { margin: 0; color: var(--fg2); max-width: 75ch; }
+.cfp-detail a { font-weight: 600; }
+.cfp-how { margin-top: 20px; display: grid; gap: 6px; font-size: 13px; color: var(--fg3); max-width: 80ch; }
+.cfp-how p { margin: 0; } .cfp-how b { color: var(--fg); }
+@media (max-width: 640px) { .cfp-group { flex: 1 1 100%; } .cfp-row-head { grid-template-columns: 50px minmax(0, 1fr); } .cfp-right { grid-column: 2; justify-items: start; grid-auto-flow: column; justify-content: start; } }
+</style>
+
+<div id="viewCfp" role="tabpanel" aria-labelledby="tabCfp" hidden data-dyn>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow" id="cfpEyebrow"></p>
+      <h1 id="cfpTitle"></h1>
+      <p class="lede" id="cfpLede"></p>
+      <div class="meta"><div id="cfpUpdated"></div><div id="cfpSource"></div></div>
+      <div class="stats" id="cfpStats"></div>
+    </div>
+  </section>
+  <section class="block wrap">
+    <div class="cfp-tools">
+      <div class="cfp-search"><input id="cfpQ" type="search" autocomplete="off"></div>
+      <div class="cfp-filters">
+        <div class="cfp-group" id="cfpRegion" role="group"></div>
+        <div class="cfp-group" id="cfpStatus" role="group"></div>
+        <div class="cfp-group" id="cfpKind" role="group"></div>
+      </div>
+      <div class="cfp-count" id="cfpCount"></div>
+    </div>
+    <div class="cfp-list" id="cfpList"></div>
+    <div class="cfp-how" id="cfpHow"></div>
+  </section>
+</div>
+
+<script>
+(function () {
+  const CFP = __CFP__;
+  const UI = __CFPUI__;
+  const $ = (id) => document.getElementById(id);
+  const LOCALE = { en: 'en-US', pt: 'pt-BR', es: 'es-MX' };
+  const EVENTS = (CFP && CFP.events) || [];
+  const REGIONS = ['all', 'Brasil', 'LATAM', 'Global'];
+  const STATUSES = ['all', 'aberto', 'previsto', 'curadoria', 'fechado'];
+  const KINDS = ['all', 'conferência', 'comunidade', 'cloud/dev', 'corporativo', 'meetup', 'acadêmico'];
+  const KIND_KEY = { 'conferência': 'conf', 'comunidade': 'community', 'cloud/dev': 'clouddev', 'corporativo': 'corp', 'meetup': 'meetup', 'acadêmico': 'academic' };
+  const REGION_KEY = { Brasil: 'br', LATAM: 'latam', Global: 'global' };
+  const DAY = 864e5;
+  const st = { region: 'all', status: 'all', kind: 'all', q: '', open: null };
+
+  function lang() { const l = document.documentElement.lang || 'en'; return l.startsWith('pt') ? 'pt' : l.startsWith('es') ? 'es' : 'en'; }
+  function t(k, v) { let s = (UI[lang()] && UI[lang()][k]) || UI.en[k] || ''; if (v) for (const x in v) s = s.split('{' + x + '}').join(v[x]); return s; }
+  function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+  function today0() { const d = new Date(); d.setHours(0, 0, 0, 0); return d; }
+  function pd(s) { if (!s) return null; const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); }
+  function daysTo(s) { const d = pd(s); return d ? Math.round((d - today0()) / DAY) : null; }
+  function fmtLong(s) { const d = pd(s); return d ? new Intl.DateTimeFormat(LOCALE[lang()], { day: '2-digit', month: 'short', year: 'numeric' }).format(d) : t('cfpTbc'); }
+  function mon(d) { return new Intl.DateTimeFormat(LOCALE[lang()], { month: 'short' }).format(d).replace('.', ''); }
+  function live(r) {
+    if (r.status === 'curadoria') return 'curadoria';
+    const now = today0(), o = pd(r.cfpOpen), c = pd(r.cfpClose);
+    if (c && now > c) return 'fechado';
+    if (o && c) return now < o ? 'previsto' : 'aberto';
+    if (o && !c) return now < o ? 'previsto' : (r.status || 'previsto');
+    return r.status || 'previsto';
+  }
+  const ROWS = EVENTS.map(r => Object.assign({}, r, { live: live(r) }));
+  function sortKey(r) {
+    if (r.live === 'aberto') return pd(r.cfpClose)?.getTime() ?? 5e15;
+    if (r.live === 'previsto') return 6e15 + ((pd(r.cfpOpen) || pd(r.cfpClose))?.getTime() ?? 2.8e15);
+    if (r.live === 'curadoria') return 9.3e15;
+    return 9.6e15;
+  }
+  const label = {
+    region: v => v === 'all' ? t('cfpAll') : t('rg_' + REGION_KEY[v]),
+    status: v => v === 'all' ? t('cfpAll') : t('st_' + v),
+    kind: v => v === 'all' ? t('cfpAll') : t('k_' + KIND_KEY[v])
+  };
+  function chips(id, field, opts, title) {
+    $(id).innerHTML = `<span>${esc(title)}</span>` + opts.map((v, i) => `<button type="button" class="chip" data-i="${i}" aria-pressed="${st[field] === v}">${esc(label[field](v))}</button>`).join('');
+    $(id).setAttribute('aria-label', title);
+    $(id).onclick = e => { const b = e.target.closest('.chip'); if (!b) return; st[field] = opts[+b.dataset.i]; st.open = null; render(); };
+  }
+
+  function render() {
+    const open = ROWS.filter(r => r.live === 'aberto');
+    $('tabLaunches').textContent = t('tabLaunches');
+    $('tabCfp').innerHTML = esc(t('tabCfp')) + (open.length ? ` <span class="n">${open.length}</span>` : '');
+    if ($('viewCfp').hidden) return;
+    $('cfpEyebrow').textContent = t('cfpEyebrow');
+    $('cfpTitle').textContent = t('cfpTitle');
+    $('cfpLede').textContent = t('cfpLede');
+    $('cfpUpdated').innerHTML = CFP && CFP.updated ? `<strong>${esc(t('cfpUpdatedL'))}</strong> ${esc(fmtLong(CFP.updated))}` : '';
+    $('cfpSource').innerHTML = `<strong>${esc(t('cfpSourceL'))}</strong> ${esc(t('cfpSource'))}`;
+    const hot = open.filter(r => { const d = daysTo(r.cfpClose); return d !== null && d >= 0 && d <= 14; }).length;
+    const soon = ROWS.filter(r => { if (r.live !== 'previsto') return false; const d = daysTo(r.cfpOpen); return d !== null && d >= 0 && d <= 60; }).length;
+    $('cfpStats').innerHTML = [[open.length, t('cfpStOpen')], [hot, t('cfpStHot')], [soon, t('cfpStSoon')], [ROWS.length, t('cfpStTotal')]]
+      .map(([n, l]) => `<div class="stat"><b>${n}</b><span>${esc(l)}</span></div>`).join('');
+    $('cfpQ').placeholder = t('cfpSearch'); $('cfpQ').setAttribute('aria-label', t('cfpSearch'));
+    chips('cfpRegion', 'region', REGIONS, t('cfpRegion'));
+    chips('cfpStatus', 'status', STATUSES, t('cfpStatus'));
+    chips('cfpKind', 'kind', KINDS, t('cfpKind'));
+    const q = st.q.trim().toLowerCase();
+    const list = ROWS.filter(r => (st.region === 'all' || r.region === st.region) && (st.status === 'all' || r.live === st.status) && (st.kind === 'all' || r.kind === st.kind)
+      && (!q || (r.name + ' ' + (r.location || '') + ' ' + (r.notes || '')).toLowerCase().includes(q)))
+      .sort((a, b) => sortKey(a) - sortKey(b) || a.name.localeCompare(b.name));
+    $('cfpCount').textContent = t('cfpCount', { n: list.length, total: ROWS.length });
+    $('cfpList').innerHTML = !ROWS.length ? `<div class="empty">${esc(t('cfpNoData'))}</div>` : !list.length ? `<div class="empty">${esc(t('cfpEmpty'))}</div>` : list.map(r => {
+      const ref = r.live === 'previsto' ? (r.cfpOpen || r.cfpClose) : r.cfpClose;
+      const d = pd(ref), dl = daysTo(r.cfpClose);
+      const urgent = r.live === 'aberto' && dl !== null && dl >= 0 && dl <= 14;
+      let dt = '';
+      if (r.live === 'aberto') dt = dl === null ? t('cfpNoDeadline') : dl === 0 ? t('cfpToday') : t('cfpCloses', { n: dl });
+      else if (r.live === 'previsto') { const o = daysTo(r.cfpOpen); dt = o !== null && o > 0 ? t('cfpOpens', { n: o }) : t('cfpWindowTbc'); }
+      const showEst = r.estimated && (r.cfpOpen || r.cfpClose) && r.live !== 'fechado';
+      const isOpen = st.open === r.id;
+      return `<article class="cfp-row${urgent ? ' urgent' : ''}">
+        <button type="button" class="cfp-row-head" data-id="${esc(r.id)}" aria-expanded="${isOpen}">
+          <div class="cfp-date">${d ? `<b>${String(d.getDate()).padStart(2, '0')}</b><span>${esc(mon(d))} ${String(d.getFullYear()).slice(2)}</span>` : `<b>-</b><span>${esc(t('cfpNoDate'))}</span>`}</div>
+          <div style="min-width:0"><div class="cfp-name">${esc(r.name)}</div>
+            <div class="cfp-meta"><span>${esc(t('rg_' + REGION_KEY[r.region]))} · ${esc(t('k_' + KIND_KEY[r.kind]))}</span><span lang="pt">${esc(r.eventDates || '')}</span><span>${esc(r.location || '')}</span></div></div>
+          <div class="cfp-right"><span class="tag st-${esc(r.live)}">${esc(t('st_' + r.live))}</span>${dt ? `<span class="cfp-days${urgent ? ' hot' : ''}">${esc(dt)}</span>` : ''}${showEst ? `<span class="cfp-est">${esc(t('cfpEst'))}</span>` : ''}</div>
+        </button>
+        ${isOpen ? `<div class="cfp-detail">
+          <div class="cfp-kv">
+            <div><small>${esc(t('cfpDOpen'))}</small><div>${esc(fmtLong(r.cfpOpen))}</div></div>
+            <div><small>${esc(t('cfpDClose'))}</small><div>${esc(fmtLong(r.cfpClose))}</div></div>
+            <div><small>${esc(t('cfpDDates'))}</small><div>${esc(r.estimated ? t('cfpEstYes') : t('cfpEstNo'))}</div></div>
+          </div>
+          ${r.notes ? `<p lang="pt">${esc(r.notes)}</p>` : ''}
+          ${r.notes && lang() !== 'pt' ? `<p class="cfp-count">${esc(t('cfpNotesLang'))}</p>` : ''}
+          ${r.cfpUrl ? `<a href="${esc(r.cfpUrl)}" target="_blank" rel="noopener">${esc(t('cfpLink'))} ↗</a>` : ''}
+        </div>` : ''}
+      </article>`;
+    }).join('');
+    $('cfpHow').innerHTML = `<p><b>${esc(t('cfpHowT'))}</b> ${esc(t('cfpHow'))}</p><p><b>${esc(t('cfpStT'))}</b> ${esc(t('cfpSt'))}</p><p>${esc(t('cfpCheck'))}</p>`;
+  }
+
+  function show(view, fromClick) {
+    const isCfp = view === 'cfp';
+    $('viewLaunches').hidden = isCfp; $('viewCfp').hidden = !isCfp;
+    $('tabLaunches').setAttribute('aria-selected', String(!isCfp)); $('tabCfp').setAttribute('aria-selected', String(isCfp));
+    if (fromClick) { try { history.replaceState(null, '', isCfp ? '#cfp' : location.pathname + location.search); } catch (e) {} window.scrollTo(0, 0); }
+    render();
+  }
+
+  // the site footer sits inside the launches view in the template; keep it visible on both tabs
+  const footer = document.querySelector('footer'); if (footer) document.body.appendChild(footer);
+  $('cfpList').addEventListener('click', e => { const b = e.target.closest('.cfp-row-head'); if (!b) return; st.open = st.open === b.dataset.id ? null : b.dataset.id; render(); });
+  $('cfpQ').addEventListener('input', e => { st.q = e.target.value; render(); });
+  document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => show(b.dataset.view, true)));
+  document.querySelectorAll('.lang-switch button').forEach(b => b.addEventListener('click', () => render()));
+  window.addEventListener('hashchange', () => show((location.hash || '').slice(1).toLowerCase() === 'cfp' ? 'cfp' : 'launches', false));
+  show((location.hash || '').slice(1).toLowerCase() === 'cfp' ? 'cfp' : 'launches', false);
+})();
+</script>

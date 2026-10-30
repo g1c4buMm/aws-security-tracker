@@ -7,6 +7,7 @@ The latest week, the "Updated" date and the source date range are computed
 from the data, so no HTML needs hand edits when a new week is added.
 The newest data/highlights/wNN.json, written by the Security Weekly Radar,
 fills the "This week's highlights" section; without one the section stays hidden.
+data/cfps.json ({"updated", "events": [...]}) fills the Call for papers tab.
 --updated defaults to today.
 """
 import argparse
@@ -17,7 +18,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC, I18N, DIST = ROOT / "src", ROOT / "i18n", ROOT / "dist"
-PARTS = ["p1_head.html", "p2_top.html", "p3_deep.html", "p4_script.html"]
+PARTS = ["p1_head.html", "p2_top.html", "p3_deep.html", "p4_script.html", "p5_cfp.html"]
 EN_M = "January February March April May June July August September October November December".split()
 PT_M = "janeiro fevereiro março abril maio junho julho agosto setembro outubro novembro dezembro".split()
 ES_M = "enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre".split()
@@ -72,6 +73,12 @@ def main() -> None:
         if name not in html:
             sys.exit(f"placeholder {name} missing in src/")
         html = html.replace(name, json.dumps(obj, ensure_ascii=False), 1)
+    cfp_file = ROOT / "data" / "cfps.json"
+    cfp = load(cfp_file) if cfp_file.exists() else {"updated": None, "events": []}
+    if "__CFP__" not in html:
+        sys.exit("placeholder __CFP__ missing in src/")
+    html = html.replace("__CFP__", json.dumps(cfp, ensure_ascii=False).replace("</", "<\\/"), 1)
+    html = html.replace("__CFPUI__", json.dumps(load(I18N / "cfp.json"), ensure_ascii=False), 1)
     if "__HL__" not in html:
         sys.exit("placeholder __HL__ missing in src/")
     html = html.replace("__HL__", json.dumps(highlights, ensure_ascii=False), 1)
@@ -86,7 +93,7 @@ def main() -> None:
     DIST.mkdir(exist_ok=True)
     (DIST / "index.html").write_text(page, encoding="utf-8")          # full page for Amplify / S3
     (DIST / "artifact.html").write_text(html, encoding="utf-8")       # fragment for the Claude artifact
-    print(f"dist/: {len(data)} launches, weeks 1-{last_w}, updated {up}, {len(page)//1024} KB")
+    print(f"dist/: {len(data)} launches, {len(cfp['events'])} CFP events, weeks 1-{last_w}, updated {up}, {len(page)//1024} KB")
 
 
 if __name__ == "__main__":
