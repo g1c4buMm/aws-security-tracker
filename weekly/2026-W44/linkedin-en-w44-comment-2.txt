@@ -1,0 +1,14 @@
+Links (2/2)
+
+Identity:
+- Identity Store events: https://aws.amazon.com/about-aws/whats-new/2026/10/aws-identity-store-change-notifications/
+- Cross-Region trusted identity propagation: https://aws.amazon.com/about-aws/whats-new/2026/10/aws-iam-identity-center-cross-region-tip/
+- Glue OAuth for Iceberg REST: https://aws.amazon.com/about-aws/whats-new/2026/10/glue-catalog-oauth-iceberg-rest/
+- SageMaker custom designations: https://aws.amazon.com/about-aws/whats-new/2026/10/sagemaker-custom-designations/
+
+AI and network:
+- Quick Smart Approvals: https://aws.amazon.com/about-aws/whats-new/2026/10/quick-smart-approvals-agentic-actions/
+- AWS WAF automatic SDK: https://aws.amazon.com/about-aws/whats-new/2026/10/aws-waf-automatic-sdk-integration-amazon-cloudfront/
+- Agent Registry Regions: https://aws.amazon.com/about-aws/whats-new/2026/10/aws-agent-registry-four-regions/
+
+Weekly tracker and Call for papers tab: https://g1c4bumm.github.io/aws-security-tracker/

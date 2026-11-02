@@ -1,0 +1,67 @@
+{
+ "w": 44,
+ "lang": "pt",
+ "headline": "Semana pós-quântica: AWS KMS ganha ML-KEM, Aurora PostgreSQL e Amazon MSK reforçam o TLS em trânsito e o CloudFront passa a mostrar quem já conecta com criptografia pós-quântica. Na identidade, o Identity Store passa a emitir eventos de mudança.",
+ "items": [
+  {
+   "d": "2026-10-26",
+   "t": "AWS Key Management Service now supports ML-KEM for post-quantum key encapsulation",
+   "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/kms-ml-kem-post-quantum/",
+   "p": "data",
+   "s": "AWS KMS",
+   "priority": "high",
+   "why": "O AWS KMS passa a oferecer ML-KEM (NIST FIPS 203), o mecanismo que substitui DH/ECDH e o transporte de chave por RSA. Ataca o risco de capturar o tráfego hoje e decifrar depois com computação quântica.",
+   "action": "Liste os fluxos com parceiros cujo sigilo precisa durar mais de uma década e teste uma chave ML-KEM-768 em homologação, exportando a chave pública para o parceiro."
+  },
+  {
+   "d": "2026-10-28",
+   "t": "AWS IAM Identity Center's Identity Store now supports change notifications through Amazon EventBridge",
+   "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-identity-store-change-notifications/",
+   "p": "identity",
+   "s": "AWS IAM Identity Center",
+   "priority": "high",
+   "why": "O Identity Store do IAM Identity Center agora emite eventos no EventBridge para criação, alteração e exclusão de usuários, grupos e participações. Mudança de acesso deixa de depender de varredura periódica.",
+   "action": "Crie uma regra no EventBridge que envie ao SIEM as mudanças em grupos privilegiados e dispare alerta fora do horário de mudança aprovada."
+  },
+  {
+   "d": "2026-10-30",
+   "t": "Amazon CloudFront now provides viewer ISP and post-quantum TLS details",
+   "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-viewer-isp-post-quantum-visbility/",
+   "p": "network",
+   "s": "Amazon CloudFront",
+   "priority": "medium",
+   "why": "O CloudFront pode encaminhar à origem o cabeçalho CloudFront-Viewer-TLS-Details, com troca de chaves e assinatura de cada conexão. Dá para medir quantos clientes já usam criptografia pós-quântica antes de definir metas.",
+   "action": "Adicione o cabeçalho à origin request policy de uma distribuição de canal digital e acompanhe a participação de conexões PQC por uma semana."
+  },
+  {
+   "d": "2026-10-29",
+   "t": "Amazon Aurora now supports post-quantum TLS key exchange",
+   "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aurora-postgresql-post-quantum-tls-key-exchange/",
+   "p": "data",
+   "s": "Amazon Aurora",
+   "priority": "medium",
+   "why": "O Aurora PostgreSQL 18 ou superior permite escolher, pelo parâmetro ssl_groups, grupos de troca de chaves pós-quânticos para dados em trânsito.",
+   "action": "Em um cluster de teste na versão 18, ajuste o ssl_groups e valide a compatibilidade dos drivers das aplicações."
+  },
+  {
+   "d": "2026-10-30",
+   "t": "Amazon MSK now supports TLS 1.3 for data in transit",
+   "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-msk-tls/",
+   "p": "data",
+   "s": "Amazon MSK",
+   "priority": "medium",
+   "why": "O Amazon MSK Provisioned aceita TLS 1.3 por políticas de segurança nomeadas. Políticas mistas 1.2 e 1.3 permitem migrar clientes aos poucos antes de exigir só 1.3.",
+   "action": "Aplique uma política mista em um cluster, identifique os clientes que ainda negociam TLS 1.2 e planeje a política só 1.3."
+  },
+  {
+   "d": "2026-10-26",
+   "t": "AWS IAM Identity Center now supports cross-Region trusted identity propagation",
+   "u": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-iam-identity-center-cross-region-tip/",
+   "p": "identity",
+   "s": "AWS IAM Identity Center",
+   "priority": "medium",
+   "why": "A propagação de identidade confiável passa a funcionar entre Regiões. O acesso continua por usuário e auditável, sem recorrer a roles amplas que não distinguem quem fez a consulta.",
+   "action": "Mapeie os casos em que analistas acessam dados em outra Região por role compartilhada e avalie migrar para propagação de identidade."
+  }
+ ]
+}

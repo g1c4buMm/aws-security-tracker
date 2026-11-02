@@ -1,0 +1,34 @@
+𝗔𝗪𝗦 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗪𝗲𝗲𝗸𝗹𝘆 | 𝗪𝟰𝟰 (𝗢𝗰𝘁 𝟮𝟲 - 𝗡𝗼𝘃 𝟭, 𝟮𝟬𝟮𝟲)
+
+Four launches this week prepare you for post-quantum encryption: KMS, Aurora, MSK and CloudFront. In financial services reviews, two questions keep coming back:
+1. Which data we encrypt today must still be secret ten years from now?
+2. When someone changes access, how fast do we know?
+
+I counted 17 AWS security launches this week. Eight answer these questions directly:
+
+𝗤𝘂𝗲𝘀𝘁𝗶𝗼𝗻 𝟭: 𝗴𝗲𝘁 𝗮𝗵𝗲𝗮𝗱 𝗼𝗳 𝗵𝗮𝗿𝘃𝗲𝘀𝘁 𝗻𝗼𝘄, 𝗱𝗲𝗰𝗿𝘆𝗽𝘁 𝗹𝗮𝘁𝗲𝗿
+- AWS KMS supports ML-KEM (NIST FIPS 203) with 512, 768 and 1024 key specs. Private keys stay in FIPS 140-3 Level 3 HSMs; partners encapsulate locally with the exported public key, using libraries such as AWS-LC, OpenSSL or Bouncy Castle.
+- Aurora PostgreSQL 18 and later: set the ssl_groups parameter to pick post-quantum TLS key exchange groups.
+- Amazon MSK Provisioned accepts TLS 1.3 through named security policies. Mixed 1.2 and 1.3 policies let clients migrate before you enforce 1.3 only.
+- CloudFront can forward the CloudFront-Viewer-TLS-Details header to your origin, so you can measure the share of viewers that connect with PQC today.
+
+𝗤𝘂𝗲𝘀𝘁𝗶𝗼𝗻 𝟮: 𝘀𝗲𝗲 𝗮𝗰𝗰𝗲𝘀𝘀 𝗰𝗵𝗮𝗻𝗴𝗲𝘀 𝗮𝘀 𝘁𝗵𝗲𝘆 𝗵𝗮𝗽𝗽𝗲𝗻
+- IAM Identity Center's Identity Store sends EventBridge events when users, groups or memberships are created, updated or deleted. Route them to your SIEM or drive offboarding.
+- Trusted identity propagation now works across Regions. Access stays per user and auditable, without the broad IAM roles cross-Region access used to need.
+- Glue Data Catalog accepts OAuth 2.0 bearer tokens on the Iceberg REST APIs. Partners exchange an OIDC token for a short-lived token, no AWS credentials shared, and IAM and Lake Formation still decide access.
+- Amazon Quick Smart Approvals: a separate review model approves routine agent actions and sends high-impact ones back to the user. CloudTrail records each auto-approved action.
+
+𝗪𝗵𝗲𝗿𝗲 𝘁𝗼 𝘀𝘁𝗮𝗿𝘁:
+1. List the flows whose confidentiality must outlast a decade and test ML-KEM in KMS on one of them.
+2. Add the TLS details header on one distribution and measure your PQC share before setting targets.
+3. Send Identity Store events to your SIEM and alert on privileged group changes.
+
+Also this week: CloudFront can inject the AWS WAF JavaScript SDK for Bot Control (targeted), ATP and ACFP; SageMaker Unified Studio custom designations; AWS Backup restore testing for Redshift; ACM ACME in GovCloud; Agent Registry in four more Regions.
+
+New on the tracker: a Call for papers tab with security and cloud CFPs across Brazil, LATAM and global. Links in the comments.
+
+Which question is harder for your team today?
+
+Views are my own.
+
+#AWS #CloudSecurity #AWSSecurity #PostQuantum #Identity #FinancialServices

@@ -1,0 +1,9 @@
+Links (1/2)
+
+Data protection and post-quantum:
+- KMS ML-KEM: https://aws.amazon.com/about-aws/whats-new/2026/10/kms-ml-kem-post-quantum/
+- Aurora PQ-TLS: https://aws.amazon.com/about-aws/whats-new/2026/10/aurora-postgresql-post-quantum-tls-key-exchange/
+- MSK TLS 1.3: https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-msk-tls/
+- CloudFront TLS details: https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-viewer-isp-post-quantum-visbility/
+- Backup restore testing for Redshift: https://aws.amazon.com/about-aws/whats-new/2026/10/aws-backup-adds-redshift-restore-testing/
+- ACM ACME in GovCloud: https://aws.amazon.com/about-aws/whats-new/2026/10/acm-acme-support-govcloud-us/
